@@ -1,0 +1,17 @@
+# Never version secrets or Wazuh data
+*.pem
+*.key
+*.crt
+config/
+certs/
+wazuh-docker/
+*.env
+.env
+
+# Evidence may contain sensitive data — review before committing
+evidence/*.png
+evidence/*.jpg
+
+# System junk
+.DS_Store
+Thumbs.db

