@@ -15,3 +15,7 @@ evidence/*.jpg
 # System junk
 .DS_Store
 Thumbs.db
+.venv/
+.env
+triage/data/raw/
+__pycache__/
