@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.65,
+  "tecnica_mitre": "T1548.003",
+  "justificativa": "O usuário 'ubuntu' executou sudo como root em TTY local para reiniciar o serviço ssh, o que é uma ação administrativa comum e sem indicadores de abuso. A confiança é moderada porque o hostname no log (ubuntu-vm-lab) não corresponde ao campo maquina (vitima01) e há defasagem de cerca de 33 minutos entre o log e o alerta.",
+  "proximos_passos": [
+    "Confirmar com o administrador responsável se a reinicialização do ssh em TTY1 foi uma ação planejada.",
+    "Verificar a origem do log e o mapeamento de hostname (ubuntu-vm-lab vs. vitima01) para descartar coleta de outra máquina ou falha de agente.",
+    "Checar se houve logins SSH ou alterações de configuração antes e depois do horário do evento."
+  ]
+}

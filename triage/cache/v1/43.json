@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A assinatura genérica do rootcheck, que casa padrões comuns como '/bin/.*sh', costuma gerar falsos positivos em binários legítimos, mas a mensagem indica possível trojanização de /usr/bin/date, o que exige verificação de integridade. Sem a verificação do pacote e do hash, não há base suficiente para decidir entre incidente e falso positivo.",
+  "proximos_passos": [
+    "Verificar a integridade do binário com o gerenciador de pacotes (rpm -V coreutils ou debsums -c coreutils) e comparar o hash SHA-256 com a versão oficial.",
+    "Checar a data de modificação, o dono e as permissões de /usr/bin/date, além de procurar outros binários alterados recentemente.",
+    "Executar uma varredura de rootkit (rkhunter/chkrootkit) em vitima01 e revisar logins e processos suspeitos no mesmo período."
+  ]
+}

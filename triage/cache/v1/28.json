@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A assinatura genérica do rootcheck (que procura strings como 'bash' e '/bin/sh') gera muitos falsos positivos em binários legítimos, mas /bin/env é um alvo comum de trojanização, então não dá para descartar sem verificar a integridade do arquivo. A regra não traz hash, pacote de origem nem atividade associada, o que é insuficiente para decidir.",
+  "proximos_passos": [
+    "Verificar a integridade do /bin/env com 'rpm -Vf /bin/env' ou 'dpkg -V coreutils' e comparar o hash SHA-256 com o do pacote original.",
+    "Checar a data de modificação e o dono do arquivo (stat /bin/env) e procurar outras alterações recentes em /bin e /usr/bin.",
+    "Verificar no vitima01 processos e conexões suspeitas e logs de autenticação recentes, escalando para incidente se a integridade falhar."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1053.003",
+  "justificativa": "O log mostra que o usuário 'ubuntu' substituiu o crontab, o que pode ser uma edição administrativa normal ou persistência via cron (T1053.003), mas o conteúdo alterado não é informado. Também há divergência entre o campo 'maquina' (vitima01) e o hostname no log (ubuntu-vm-lab), o que precisa ser esclarecido.",
+  "proximos_passos": [
+    "Examinar o conteúdo atual do crontab do usuário ubuntu e de /etc/cron* para identificar comandos novos ou suspeitos, comparando com a versão anterior, se houver.",
+    "Verificar a origem da sessão (auth.log, histórico de comandos, IP de login) e confirmar com o responsável se a alteração foi feita por ele.",
+    "Confirmar qual host gerou o alerta, já que o hostname do log difere do campo 'maquina'."
+  ]
+}

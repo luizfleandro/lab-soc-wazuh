@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.9,
+  "tecnica_mitre": null,
+  "justificativa": "Alerta de nível 3 indicando apenas o fechamento de uma sessão PAM do sudo para root, evento rotineiro de administração. Não há sinal de comando suspeito ou autenticação falha associada no log fornecido.",
+  "proximos_passos": [
+    "Verificar no auditd ou no histórico do sudo qual comando foi executado pelo usuário na sessão PAM correspondente (PID 4432).",
+    "Confirmar que o usuário que originou o sudo é um administrador esperado nesse horário.",
+    "Observar se houver ocorrências repetidas ou anômalas de sudo em vitima01 antes de encerrar."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "veredito": "incidente",
+  "confianca": 0.8,
+  "tecnica_mitre": "T1136.001",
+  "justificativa": "Foi criada uma conta local com shell interativo (/bin/bash) e UID 999 a partir de um terminal interativo (/dev/pts/0), o que pode indicar persistência. O nome 'evil_username' e o hostname do log (ubuntu-vm-lab) diferente de vitima01 podem ser teste de laboratório, mas precisam ser confirmados.",
+  "proximos_passos": [
+    "Verificar quem estava logado em /dev/pts/0 (comandos w, last, auth.log) e confirmar se a criação da conta foi autorizada.",
+    "Checar a conta em /etc/passwd, /etc/shadow e /etc/sudoers, além de grupos e chaves SSH, e desabilitá-la se não for legítima.",
+    "Confirmar o host de origem do alerta, pois o hostname do log não corresponde ao agente vitima01, e revisar outras criações de usuário no mesmo período."
+  ]
+}

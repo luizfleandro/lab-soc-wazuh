@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há apenas uma falha de verificação de senha do usuário 'ubuntu' via unix_chkpwd, o que pode ser erro de digitação legítimo, mas não basta para descartar tentativa de adivinhação de senha. O alerta também tem inconsistências (maquina 'vitima01' vs. host 'ubuntu-vm-lab' no log, e horário 14:15 vs. 13:42), o que sugere problema de correlação ou coleta.",
+  "proximos_passos": [
+    "Verificar no host se há outras falhas de autenticação para o mesmo usuário em um intervalo curto e identificar o serviço que chamou unix_chkpwd (sudo, su ou login).",
+    "Confirmar a origem dos logs e a correspondência entre vitima01 e ubuntu-vm-lab, além da diferença de fuso ou horário entre o alerta e o log original.",
+    "Se houver repetição ou falhas seguidas de sucesso, escalar como incidente e revisar logins bem-sucedidos e sessões recentes do usuário."
+  ]
+}

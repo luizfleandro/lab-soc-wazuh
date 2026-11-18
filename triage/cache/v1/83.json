@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.85,
+  "tecnica_mitre": null,
+  "justificativa": "O evento é apenas o fechamento de uma sessão PAM do sudo para root, um registro operacional de rotina com nível 3 e sem indicadores de atividade maliciosa. O nome do host no log (ubuntu-vm-lab) diverge do campo maquina (vitima01), o que vale conferir, mas não muda a avaliação.",
+  "proximos_passos": [
+    "Confirmar que o log corresponde ao agente vitima01, verificando a correspondência de hostname entre o agente Wazuh e o syslog.",
+    "Correlacionar com o evento de abertura da sessão sudo (pam_unix session opened) e com o usuário que executou o sudo, para confirmar que a escalada foi esperada.",
+    "Se houver outros alertas de sudo fora do horário de manutenção ou de usuários não administradores, reabrir a triagem."
+  ]
+}

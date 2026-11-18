@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1078",
+  "justificativa": "Abertura de sessão sudo para root por um usuário administrativo comum (ubuntu, uid 1000) é atividade rotineira, e a regra é de nível baixo. Há divergência de hostname (vitima01 no alerta, ubuntu-vm-lab no log) e de horário (13:26 no alerta, 13:09 no log), o que reduz a confiança na conclusão.",
+  "proximos_passos": [
+    "Confirmar com o responsável se o usuário ubuntu executou comandos sudo nesse horário e qual foi a finalidade.",
+    "Verificar no host de origem do log a correspondência entre vitima01 e ubuntu-vm-lab e o atraso de ingestão no Wazuh.",
+    "Revisar os comandos executados na sessão (auditd ou histórico do sudo) e checar se há logins incomuns para o usuário ubuntu."
+  ]
+}

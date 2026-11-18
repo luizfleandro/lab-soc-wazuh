@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A regra do rootcheck é baseada em assinatura genérica de strings (como '/bin/sh' e 'bash') e é conhecida por gerar falsos positivos em binários legítimos, mas a detecção de um binário do sistema como trojanizado também pode indicar rootkit. Sem verificar a integridade do arquivo, não há base para decidir entre incidente e falso positivo.",
+  "proximos_passos": [
+    "Verificar a integridade de /bin/md5sum com o gerenciador de pacotes (dpkg -V coreutils ou rpm -V coreutils) e comparar o hash com a versão oficial do pacote.",
+    "Checar eventos recentes de alteração no arquivo (mtime, ctime, auditd) e se houve atualização ou manutenção no horário do alerta.",
+    "Se a verificação falhar ou houver indícios adicionais, escalar para resposta a incidente e executar scanners de rootkit (ex.: rkhunter, chkrootkit) e análise de integridade completa."
+  ]
+}

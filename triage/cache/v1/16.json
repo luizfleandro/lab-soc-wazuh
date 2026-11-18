@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1554",
+  "justificativa": "O rootcheck usou uma assinatura genérica (regex com 'bash', '/bin/sh' e similares), o que gera muitos falsos positivos em binários legítimos. Se o binário estiver realmente alterado, porém, seria um possível comprometimento de binário do sistema, então não dá para descartar sem verificação.",
+  "proximos_passos": [
+    "Verificar a integridade do /bin/chgrp com o gerenciador de pacotes (rpm -Vf /bin/chgrp ou dpkg -V coreutils) e comparar o hash SHA256 com o do pacote original.",
+    "Checar mtime, ctime e dono do arquivo, e procurar outras alterações recentes em /bin, /sbin e /usr/bin no host vitima01.",
+    "Verificar se o alerta se repete após a rotação do rootcheck e correlacionar com logins, processos e conexões de rede suspeitos no mesmo período."
+  ]
+}

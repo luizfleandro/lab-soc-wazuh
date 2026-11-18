@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1136.001",
+  "justificativa": "Foi criada a conta local 'teste_lab' com shell /bin/sh a partir de /dev/pts/0, o que pode ser um teste de laboratório ou uma persistência, e o log não mostra quem executou o comando. Há ainda divergência entre o hostname do log (ubuntu-vm-lab) e o campo maquina (vitima01), o que precisa ser esclarecido.",
+  "proximos_passos": [
+    "Identificar o usuário e a sessão que executaram o useradd (auth.log, sudo, 'last' e 'who' para o pts/0) e confirmar se houve autorização ou ticket de mudança.",
+    "Verificar se a conta 'teste_lab' foi adicionada a grupos privilegiados (sudo, admin) ou recebeu chaves SSH e cron jobs, e confirmar a origem do alerta pelo hostname.",
+    "Se não houver justificativa, desabilitar a conta, coletar evidências e escalar para investigação."
+  ]
+}

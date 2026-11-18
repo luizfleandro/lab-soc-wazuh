@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.75,
+  "tecnica_mitre": "T1078",
+  "justificativa": "Abertura de sessão sudo pelo usuário ubuntu (uid 1000) para root é atividade administrativa comum e esperada em um host Linux. O nome do host no log (ubuntu-vm-lab) difere do campo maquina (vitima01), o que precisa ser confirmado antes de encerrar.",
+  "proximos_passos": [
+    "Confirmar se o log de origem pertence ao host vitima01 e se a divergência de nome é apenas de configuração.",
+    "Verificar com o usuário ubuntu ou no histórico de auditoria (auth.log/journal) o comando executado com sudo nesse horário.",
+    "Procurar outros alertas de escalonamento de privilégio ou logins incomuns para o mesmo usuário nas últimas horas."
+  ]
+}

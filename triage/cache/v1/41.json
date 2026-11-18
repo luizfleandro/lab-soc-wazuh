@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.6,
+  "tecnica_mitre": null,
+  "justificativa": "A assinatura usada é genérica (bash|^/bin/sh|file\\.h|proc\\.h|^/bin/.*sh) e casa com strings comuns em binários legítimos, o que costuma gerar falsos positivos do rootcheck. Ainda assim, o alerta aponta um binário de sistema, então a integridade precisa ser confirmada.",
+  "proximos_passos": [
+    "Verificar a integridade do pacote com 'rpm -V coreutils' ou 'debsums -c coreutils' e comparar o hash de /usr/bin/uname com o do pacote oficial.",
+    "Checar se houve alterações recentes no binário (mtime/ctime) e revisar logs de login e de execução no host vitima01.",
+    "Se a verificação falhar ou o hash divergir, escalar como incidente e isolar o host para análise forense."
+  ]
+}

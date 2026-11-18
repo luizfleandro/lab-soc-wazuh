@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há uma única tentativa de senha para o usuário inexistente 'testing' a partir de 192.168.122.1, o que é compatível tanto com enumeração de usuários/força bruta quanto com um teste legítimo em ambiente de laboratório. O nome do host no log (ubuntu-vm-lab) não corresponde ao campo 'maquina' (vitima01), o que impede confirmar a origem do evento.",
+  "proximos_passos": [
+    "Verificar no Wazuh quantas regras 5710/5716 ocorreram a partir de 192.168.122.1 nas últimas horas e se houve login bem-sucedido posterior (regras 5715/5501).",
+    "Confirmar se 192.168.122.1 é um host conhecido (ex.: gateway ou máquina de teste do laboratório) e validar a correspondência entre vitima01 e ubuntu-vm-lab.",
+    "Se houver múltiplas tentativas de usuários diferentes ou um login bem-sucedido, escalar como incidente e avaliar bloqueio do IP e revisão de acesso SSH."
+  ]
+}

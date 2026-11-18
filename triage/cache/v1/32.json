@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.4,
+  "tecnica_mitre": "T1014",
+  "justificativa": "O rootcheck reportou /bin/chown como trojanizado com base em uma assinatura genérica (padrões como 'bash' e '^/bin/sh'), que costuma gerar falsos positivos em binários legítimos. Se o binário tiver sido realmente alterado, trata-se de indicador de rootkit, então a verificação de integridade é necessária antes de descartar o alerta.",
+  "proximos_passos": [
+    "Verificar a integridade do /bin/chown com o gerenciador de pacotes (rpm -V coreutils ou debsums -c coreutils) e comparar o hash SHA256 com a versão oficial do pacote.",
+    "Checar outros alertas de rootcheck e de integridade (FIM/syscheck) em vitima01 nas últimas horas, procurando outros binários do sistema alterados ou logins e processos suspeitos.",
+    "Se a diferença for confirmada, isolar o host para análise forense e reinstalar o pacote a partir de fonte confiável."
+  ]
+}

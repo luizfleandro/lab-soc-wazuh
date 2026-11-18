@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1078",
+  "justificativa": "A sessão sudo aberta pelo usuário ubuntu (uid 1000) para root é um padrão comum de administração e não indica escalada por si só. Porém, o hostname do log (ubuntu-vm-lab) não confere com o do alerta (vitima01) e há defasagem de cerca de 35 minutos, o que precisa ser explicado.",
+  "proximos_passos": [
+    "Confirmar que o usuário ubuntu é um administrador autorizado e que a sessão corresponde a uma atividade planejada.",
+    "Verificar a origem do hostname divergente e a sincronização de horário (NTP) entre o agente Wazuh e a máquina de origem do log.",
+    "Revisar os comandos executados nessa sessão sudo (ex.: histórico do bash, auditd) caso a atividade não seja reconhecida."
+  ]
+}

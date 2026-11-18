@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1554",
+  "justificativa": "A regra rootcheck 510 usa uma assinatura genérica que casa com strings comuns em binários legítimos, o que favorece falso positivo, mas um /usr/bin/echo alterado seria um comprometimento grave. Sem verificação de integridade do binário, não há dados suficientes para decidir.",
+  "proximos_passos": [
+    "Verificar a integridade do /usr/bin/echo com 'dpkg -V coreutils' ou 'rpm -Vf /usr/bin/echo' e comparar o hash com a versão do pacote.",
+    "Checar data de modificação, dono e permissões do arquivo, além de outros alertas de rootcheck ou FIM na vitima01 no mesmo período.",
+    "Se a integridade estiver comprometida, isolar a máquina e escalar para investigação de resposta a incidente."
+  ]
+}

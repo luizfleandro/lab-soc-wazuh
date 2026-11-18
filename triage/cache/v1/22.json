@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1554",
+  "justificativa": "A regra rootcheck 510 usa uma assinatura genérica que casa com strings comuns como 'bash' e '/bin/sh', o que gera muitos falsos positivos, mas um binário de sistema como /bin/date alterado seria um indicador grave de comprometimento. Sem a verificação de integridade do arquivo, não é possível decidir.",
+  "proximos_passos": [
+    "Verificar a integridade do /bin/date com o gerenciador de pacotes (rpm -Vf /bin/date ou debsums -c coreutils) e comparar o hash com o pacote original.",
+    "Checar data de modificação, dono e permissões do arquivo, além de logs de escrita ou alteração em /bin recentes.",
+    "Se a verificação falhar, escalar para investigação de comprometimento do host vitima01 e isolar a máquina conforme a política."
+  ]
+}

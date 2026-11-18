@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1548.003",
+  "justificativa": "O usuário 'ubuntu' executou via sudo, como root, o comando de criação de usuário 'teste_lab' em um host de laboratório, o que pode ser uma atividade de teste autorizada. Porém, a criação de contas é uma ação sensível, e o campo 'maquina' (vitima01) não corresponde ao hostname no log (ubuntu-vm-lab), o que impede confirmar a origem do evento.",
+  "proximos_passos": [
+    "Confirmar com o responsável pelo ambiente se a criação do usuário 'teste_lab' foi autorizada e verificar a correspondência entre vitima01 e ubuntu-vm-lab.",
+    "Verificar no host o histórico do usuário 'ubuntu' (sessão tty1, comandos anteriores) e a existência e data de criação da conta 'teste_lab' em /etc/passwd e /etc/group.",
+    "Procurar outros eventos de sudo e de criação de contas no mesmo período e, se não houver autorização, tratar como incidente e avaliar a remoção da conta e possível comprometimento da sessão."
+  ]
+}

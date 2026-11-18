@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.85,
+  "tecnica_mitre": null,
+  "justificativa": "A regra 5502 registra apenas o encerramento sessão PAM de um sudo para root, o que é atividade administrativa comum e de nível informativo. Há uma divergência entre o hostname do alerta (vitima01) e o do log (ubuntu-vm-lab), que vale verificar.",
+  "proximos_passos": [
+    "Confirmar se vitima01 e ubuntu-vm-lab são o mesmo host, checando a configuração do agente Wazuh e o hostname real.",
+    "Verificar nos logs a sessão sudo correspondente (abertura e comando executado) e confirmar que o usuário era esperado.",
+    "Se a divergência de hostname persistir ou o comando sudo for inesperado, reclassificar como inconclusivo e escalar para o nível 2."
+  ]
+}

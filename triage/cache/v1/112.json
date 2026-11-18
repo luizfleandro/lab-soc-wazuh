@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.55,
+  "tecnica_mitre": "T1078",
+  "justificativa": "A abertura de sessão sudo para root pelo usuário ubuntu (uid 1000) é uma atividade administrativa comum, mas o host do alerta (vitima01) não coincide com o host do log (ubuntu-vm-lab) e há uma diferença de cerca de 33 minutos entre o horário do alerta e o do log. Essas inconsistências impedem concluir com segurança se o evento é legítimo.",
+  "proximos_passos": [
+    "Confirmar a origem do log: verificar se vitima01 e ubuntu-vm-lab são o mesmo ativo e se o agente Wazuh está associado ao host correto.",
+    "Verificar o fuso horário e a sincronização NTP dos hosts para explicar a diferença de horário.",
+    "Confirmar com o responsável se o usuário ubuntu executou sudo nesse período e revisar comandos executados na sessão (auditd ou histórico)."
+  ]
+}

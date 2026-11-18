@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.55,
+  "tecnica_mitre": "T1548.003",
+  "justificativa": "O usuário 'ubuntu' obteve sudo para root em um TTY interativo e abriu o ossec.conf com nano, o que pode ser manutenção legítima, mas alterar a configuração do Wazuh pode desabilitar a monitoração. O hostname do log (ubuntu-vm-lab) também não corresponde ao campo maquina (vitima01), o que precisa ser esclarecido.",
+  "proximos_passos": [
+    "Confirmar com o administrador responsável se a edição do ossec.conf foi autorizada e qual era a mudança pretendida.",
+    "Verificar a integridade e o histórico do ossec.conf (hash, data de modificação, diff com backup ou controle de versão) e a sessão do usuário 'ubuntu' em torno de 13:09.",
+    "Investigar a divergência entre maquina=vitima01 e host ubuntu-vm-lab para confirmar a origem correta do evento."
+  ]
+}

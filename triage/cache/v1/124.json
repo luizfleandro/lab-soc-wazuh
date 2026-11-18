@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.9,
+  "tecnica_mitre": null,
+  "justificativa": "Alerta de nível 3 (regra 5502) que apenas registra o encerramento normal de uma sessão PAM do usuário ubuntu, sem indicação de falha de autenticação, escalonamento ou comportamento anômalo. Há uma divergência de horário (log às 13:42 e alerta às 14:15) e de nome de host (ubuntu-vm-lab vs. vitima01), que vale confirmar, mas não altera a leitura do evento.",
+  "proximos_passos": [
+    "Confirmar se o host ubuntu-vm-lab corresponde ao agente vitima01 e se há defasagem de relógio entre eles.",
+    "Verificar se existem eventos de login de origem remota ou falhas de autenticação próximos ao horário da sessão.",
+    "Ajustar a regra 5502 caso ela gere ruído recorrente nesse host."
+  ]
+}

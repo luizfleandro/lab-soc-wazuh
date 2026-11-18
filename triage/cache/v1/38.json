@@ -1,0 +1,11 @@
+{
+  "veredito": "incidente",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1554",
+  "justificativa": "A regra 510 do rootcheck indica que /bin/cat corresponde a uma assinatura genérica de binário trojanizado, o que pode ser um falso positivo comum, mas em um binário de sistema isso exige verificação. Sem a comparação de hash ou a checagem do gerenciador de pacotes, não é possível descartar comprometimento.",
+  "proximos_passos": [
+    "Comparar o hash de /bin/cat com o pacote original (rpm -Vf /bin/cat ou debsums -c) e verificar data de modificação e permissões.",
+    "Verificar outros binários do sistema (/bin, /sbin, /usr/bin) quanto a alterações e checar o histórico recente de logins e comandos executados em vitima01.",
+    "Se a alteração for confirmada, isolar a máquina, preservar evidências e escalar para o nível 2 para resposta a incidente."
+  ]
+}

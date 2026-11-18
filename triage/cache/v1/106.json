@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1562.001",
+  "justificativa": "A parada do agente Wazuh pode ser evasão de defesa (T1562.001), mas também pode ser manutenção ou reinício planejado, e o alerta não traz contexto suficiente para distinguir. Sem janela de manutenção conhecida e sem logs adicionais, não é possível decidir.",
+  "proximos_passos": [
+    "Verificar se há janela de manutenção ou mudança registrada para vitima01 no horário 2026-11-16T13:33:12 UTC.",
+    "Analisar logs de autenticação (sudo, SSH) e comandos executados em vitima01 nos minutos anteriores e posteriores à parada.",
+    "Confirmar se o agente volta a reportar; se não voltar, escalar para investigação de incidente e verificar a integridade do host."
+  ]
+}

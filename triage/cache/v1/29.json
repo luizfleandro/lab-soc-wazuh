@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1554",
+  "justificativa": "O rootcheck marcou /usr/bin/env como trojanizado usando uma assinatura genérica, que costuma gerar falsos positivos, mas a alteração de um binário do sistema também pode indicar comprometimento real. Sem verificar a integridade do arquivo, não há base suficiente para decidir.",
+  "proximos_passos": [
+    "Verificar a integridade do binário com 'dpkg -V coreutils' ou 'rpm -Vf /usr/bin/env' e comparar o hash SHA256 com a versão do pacote.",
+    "Checar a data de modificação, o dono e as permissões de /usr/bin/env e procurar outros binários alterados recentemente.",
+    "Se a alteração não for explicada pelo gerenciador de pacotes, escalar para o nível 2 e isolar a máquina vitima01 para investigação."
+  ]
+}

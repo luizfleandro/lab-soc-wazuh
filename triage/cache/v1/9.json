@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A assinatura genérica do rootcheck, que casa com padrões comuns como 'bash' e '/bin/sh', gera muitos falsos positivos, mas a suspeita de binário trojanizado em /usr/bin/env pode indicar rootkit. Sem verificar a integridade do arquivo, não há base suficiente para decidir.",
+  "proximos_passos": [
+    "Comparar o hash de /usr/bin/env com o pacote original (rpm -Vf /usr/bin/env ou debsums -c) e verificar data de modificação e permissões.",
+    "Verificar se há outros alertas de rootcheck ou syscheck no mesmo host (vitima01) e rodar rootkit scanners como rkhunter ou chkrootkit.",
+    "Se a integridade falhar, isolar o host e escalar para resposta a incidente."
+  ]
+}

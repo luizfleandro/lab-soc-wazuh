@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.9,
+  "tecnica_mitre": null,
+  "justificativa": "Alerta de nível 3 indicando apenas o encerramento de uma sessão PAM do sudo para root, evento operacional comum e sem indicadores de comprometimento. O log mostra sessão encerrada normalmente, sem falha de autenticação ou comando suspeito associado.",
+  "proximos_passos": [
+    "Confirmar que o usuário que executou o sudo é um administrador esperado para este horário.",
+    "Correlacionar com o evento de abertura de sessão sudo correspondente (regra PAM de session opened) para verificar o contexto completo.",
+    "Ajustar a regra 5502 para suprimir eventos de encerramento de sessão sudo isolados, se forem ruído recorrente."
+  ]
+}

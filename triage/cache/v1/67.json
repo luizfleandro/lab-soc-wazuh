@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.7,
+  "tecnica_mitre": "T1078",
+  "justificativa": "O log mostra o padrão normal de abertura de sessão PAM pelo sshd, com o processo pai em uid=0 (privilege separation), para o usuário ubuntu, que é uma conta local comum e de baixo risco. Não há sinais de falha de autenticação, escalonamento ou atividade posterior suspeita no alerta.",
+  "proximos_passos": [
+    "Confirmar no auth.log o IP de origem e o método de autenticação (chave ou senha) da sessão SSH das 13:15:37 e verificar se é esperado.",
+    "Checar o hostname: o alerta indica 'vitima01', mas o log indica 'ubuntu-vm-lab', o que pode ser erro de identificação do agente ou da coleta.",
+    "Se houver logins de IPs desconhecidos ou fora do horário habitual para o usuário ubuntu, reclassificar como incidente e investigar."
+  ]
+}

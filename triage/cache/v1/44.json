@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1554",
+  "justificativa": "A regra rootcheck usa uma assinatura genérica de padrões de texto, que costuma gerar falsos positivos em binários legítimos, mas um possível binário de sistema trojanizado (/bin/md5sum) é indicador sério de comprometimento. Sem a verificação de integridade do binário, não há base para descartar nem confirmar o incidente.",
+  "proximos_passos": [
+    "Verificar a integridade de /bin/md5sum com o gerenciador de pacotes (rpm -V coreutils ou debsums -c coreutils) e comparar o hash com a versão oficial do pacote.",
+    "Checar se houve alterações recentes no binário (data de modificação, logins e atividade administrativa no horário do alerta) e verificar processos e conexões de rede suspeitas em vitima01.",
+    "Se a integridade estiver comprometida, isolar o host e acionar a resposta a incidentes; se estiver íntegro, revisar a assinatura do rootcheck e ajustar a regra para reduzir o ruído."
+  ]
+}

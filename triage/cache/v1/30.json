@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A assinatura genérica do rootcheck, que usa padrões amplos como 'bash' e '^/bin/sh', costuma gerar falsos positivos em binários legítimos. Porém, a suspeita de um '/bin/echo' trojanizado é grave e não pode ser descartada sem verificar a integridade do arquivo.",
+  "proximos_passos": [
+    "Verificar a integridade de /bin/echo com o gerenciador de pacotes (rpm -Va coreutils ou debsums -c coreutils) e comparar o hash com a versão oficial.",
+    "Checar a data de modificação e o dono do arquivo, e procurar outros binários do sistema alterados ou novos processos suspeitos no host vitima01.",
+    "Se a integridade falhar, escalar para o nível 2 e isolar o host para investigação de rootkit; se passar, registrar como falso positivo e revisar a assinatura do rootcheck."
+  ]
+}

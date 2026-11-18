@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1548.003",
+  "justificativa": "O sudo para root executou apenas 'systemctl restart cron', um comando administrativo comum, a partir de um login interativo em TTY local pelo usuário ubuntu. Há divergências de hostname (vitima01 no alerta, ubuntu-vm-lab no log) e de horário (14:15 vs 13:41), que precisam ser confirmadas antes de encerrar.",
+  "proximos_passos": [
+    "Confirmar com o responsável se o usuário ubuntu estava em manutenção no horário do log e validar a origem do hostname divergente (vitima01 x ubuntu-vm-lab).",
+    "Verificar o histórico de comandos e o log de autenticação (auth.log/journalctl) do usuário ubuntu em torno de 13:41 UTC para descartar uso indevido de credenciais.",
+    "Confirmar que o serviço cron foi reiniciado sem alterações não autorizadas em crontabs ou em /etc/cron.* no mesmo período."
+  ]
+}

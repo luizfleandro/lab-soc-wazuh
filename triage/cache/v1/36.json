@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.6,
+  "tecnica_mitre": null,
+  "justificativa": "A assinatura genérica do rootcheck ('bash|^/bin/sh|...') corresponde a strings comuns em binários do sistema, o que gera muitos falsos positivos em utilitários como o chgrp. Ainda assim, a confirmação depende de verificar a integridade do binário contra o gerenciador de pacotes.",
+  "proximos_passos": [
+    "Verificar a integridade do /bin/chgrp com 'dpkg -V coreutils' ou 'rpm -Vf /bin/chgrp' e comparar o hash com o pacote oficial.",
+    "Conferir a data de modificação e o dono do arquivo e procurar outros binários alterados recentemente em /bin e /usr/bin.",
+    "Se a verificação falhar ou houver alterações não explicadas, escalar como incidente e isolar o host vitima01 para investigação."
+  ]
+}

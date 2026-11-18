@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.7,
+  "tecnica_mitre": "T1548.003",
+  "justificativa": "O log mostra o usuário ubuntu usando sudo no TTY local para instalar o rsync com apt-get, o que é uma ação administrativa comum e esperada. Porém, o host do log (ubuntu-vm-lab) difere do campo maquina (vitima01) e há diferença de horário, então é preciso confirmar se o evento pertence a esta máquina.",
+  "proximos_passos": [
+    "Confirmar se ubuntu-vm-lab e vitima01 são a mesma máquina e verificar a origem do evento no agente Wazuh.",
+    "Verificar com o usuário ubuntu ou com a equipe de administração se a instalação do rsync foi autorizada.",
+    "Checar se o rsync foi instalado corretamente e se há outras execuções de sudo para root fora do horário de manutenção."
+  ]
+}

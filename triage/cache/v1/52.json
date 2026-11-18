@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há uma única tentativa de login SSH com usuário inexistente ('sshconnection') vinda de 192.168.122.1, um endereço interno típico de NAT de hypervisor, o que pode ser ruído de laboratório ou um scanner interno. Não há volume suficiente nem contexto para distinguir entre enumeração de usuários e atividade legítima, e o hostname do alerta ('vitima01') não corresponde ao do log ('ubuntu-vm-lab').",
+  "proximos_passos": [
+    "Pesquisar no auth.log e no journal por tentativas repetidas do mesmo IP ou de outros usuários inexistentes nas últimas horas.",
+    "Confirmar qual host gerou o alerta e validar se 'vitima01' e 'ubuntu-vm-lab' são a mesma máquina.",
+    "Verificar se 192.168.122.1 corresponde a um host ou serviço autorizado, como um hypervisor ou uma ferramenta de teste conhecida."
+  ]
+}

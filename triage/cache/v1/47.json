@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há apenas uma falha de autenticação PAM via SSH a partir de 192.168.122.1, sem usuário identificado (ruser/logname vazios), o que não basta para distinguir erro comum de tentativa de password guessing. Além disso, o campo 'maquina' (vitima01) não corresponde ao hostname no log (ubuntu-vm-lab), o que precisa ser esclarecido.",
+  "proximos_passos": [
+    "Correlacionar outras falhas de login (regras 5760/5763 e similares) originadas de 192.168.122.1 nas últimas horas, verificando volume, usuários alvo e se houve login bem-sucedido posterior.",
+    "Confirmar a origem do alerta: validar se vitima01 e ubuntu-vm-lab são o mesmo host e se o agente Wazuh está associado ao hostname correto.",
+    "Verificar com o dono do IP 192.168.122.1 se a origem é legítima (ex.: administrador, script de automação ou VM de laboratório) e revisar /var/log/auth.log em busca de sessões aceitas a partir desse IP."
+  ]
+}

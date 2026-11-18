@@ -1,0 +1,11 @@
+{
+  "veredito": "incidente",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Uma tentativa de senha para o usuário inexistente 'testing' vinda de 192.168.122.1 é um padrão típico de adivinhação de credenciais. Um único evento não confirma ataque, e o IP parece ser o gateway da rede NAT local, o que pode indicar atividade interna ou de laboratório.",
+  "proximos_passos": [
+    "Contar tentativas de autenticação falhas do IP 192.168.122.1 e de outros usuários inexistentes na última hora para identificar brute force ou password spraying.",
+    "Verificar se o IP 192.168.122.1 é o host legítimo da rede virbr/libvirt e confirmar quem estava usando essa origem no horário do evento.",
+    "Confirmar a identidade da máquina, pois o alerta cita 'vitima01' e o log cita 'ubuntu-vm-lab', e checar se houve login bem-sucedido logo após as falhas."
+  ]
+}

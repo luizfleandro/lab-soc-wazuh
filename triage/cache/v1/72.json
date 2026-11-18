@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1087.001",
+  "justificativa": "O AppArmor bloqueou o perfil 'who' ao tentar ler /etc/passwd, o que é comum em uso legítimo do utilitário, mas também pode indicar enumeração de contas ou um perfil mal configurado. O alerta não traz o processo pai, o usuário nem o histórico de execução para diferenciar os cenários.",
+  "proximos_passos": [
+    "Verificar no host quem executou o binário 'who' (auditd, histórico de shell e processo pai) e se a execução foi interativa ou automatizada.",
+    "Confirmar se o perfil AppArmor 'who' é padrão do sistema ou foi alterado, e revisar outros DENIED recentes do mesmo perfil.",
+    "Correlacionar com outros alertas da máquina vitima01 no mesmo período, incluindo logins e comandos de enumeração de usuários."
+  ]
+}

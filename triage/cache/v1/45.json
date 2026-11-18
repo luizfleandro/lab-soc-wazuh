@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "O rootcheck marcou /usr/bin/md5sum como trojanizado com base em assinaturas genéricos (padrões como '/bin/sh' e '/dev/'), que são heurísticas com alto índice de falsos positivos, mas a integridade de um binário do sistema exige verificação antes de descartar. Sem a verificação do pacote ou do hash, não há base suficiente para classificar como incidente ou falso positivo.",
+  "proximos_passos": [
+    "Verificar a integridade do pacote com 'dpkg -V coreutils' ou 'rpm -V coreutils' e comparar o hash de /usr/bin/md5sum com o da fonte oficial do pacote.",
+    "Checar a data de modificação do binário, logins e processos suspeitos recentes em vitima01 e correlacionar com outros alertas do mesmo host.",
+    "Se a integridade falhar, escalar para o nível 2 e isolar o host para análise forense; se a verificação passar, documentar como falso positivo e avaliar ajuste da regra 510."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1548.003",
+  "justificativa": "O sudo para root foi feito localmente em tty1 pelo usuário ubuntu e o comando (grep em auth.log e ossec.log) é compatível com uma verificação administrativa de logs. Porém, o campo 'maquina' (vitima01) não corresponde ao hostname do log (ubuntu-vm-lab), o que impede confirmar que o evento é do host esperado.",
+  "proximos_passos": [
+    "Confirmar com o responsável se o usuário ubuntu estava no console tty1 e executou essa verificação de logs no horário 13:19.",
+    "Verificar a origem do alerta (agente vitima01 vs. host ubuntu-vm-lab) e checar se há falha de mapeamento de hostname no Wazuh.",
+    "Revisar os comandos sudo do mesmo usuário nas últimas horas e checar se houve alterações nos logs ou no ossec.log."
+  ]
+}

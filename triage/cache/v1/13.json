@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A regra 510 do rootcheck usa uma assinatura genérica que casa com strings comuns em binários legítimos, o que gera muitos falsos positivos. Um binário de sistema como /usr/bin/chown alterado seria um indicador grave de rootkit, então é preciso verificar a integridade antes de descartar.",
+  "proximos_passos": [
+    "Verificar a integridade do binário com o gerenciador de pacotes (rpm -Vf /usr/bin/chown ou debsums -c coreutils) e comparar o hash com a versão oficial do pacote.",
+    "Conferir data de modificação, dono e permissões de /usr/bin/chown e buscar outros binários alterados recentemente, além de executar rkhunter ou chkrootkit no host vitima01.",
+    "Correlacionar com outros alertas da mesma máquina no período (logins incomuns, processos suspeitos, conexões de saída) para descartar comprometimento."
+  ]
+}

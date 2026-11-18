@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há uma única tentativa de login SSH com usuário inexistente ('sshconnection') vinda de 192.168.122.1, o que pode ser sondagem, teste legítimo ou erro de digitação. O nome do host no alerta (vitima01) não bate com o do log (ubuntu-vm-lab), o que impede confirmar a origem do evento.",
+  "proximos_passos": [
+    "Verificar no auth.log e no Wazuh se há outras tentativas falhas do mesmo IP (192.168.122.1) em janela curta, para distinguir evento isolado de força bruta.",
+    "Confirmar qual host gerou o evento e validar a correspondência entre o nome do agente e o hostname do log.",
+    "Identificar o que está em 192.168.122.1 (gateway do libvirt, possivelmente o host de virtualização) e se houve atividade de teste ou administração nesse horário."
+  ]
+}

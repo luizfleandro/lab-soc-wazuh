@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.7,
+  "tecnica_mitre": null,
+  "justificativa": "O processo 'who', um utilitário padrão, teve acesso de leitura a /etc/passwd negado pelo perfil AppArmor, o que indica provavelmente uma lacuna de política e não uma ação maliciosa. Há apenas um evento isolado e sem outros indícios de atividade suspeita.",
+  "proximos_passos": [
+    "Verificar se há outros eventos AppArmor DENIED para o perfil 'who' ou para processos da mesma máquina nas últimas horas.",
+    "Confirmar a integridade do binário /usr/bin/who (hash e pacote) e checar se ele foi executado por um usuário esperado.",
+    "Revisar o perfil AppArmor 'who' para decidir se o acesso a /etc/passwd deve ser permitido e ajustar a regra se for legítimo."
+  ]
+}

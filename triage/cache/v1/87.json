@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.85,
+  "tecnica_mitre": null,
+  "justificativa": "Evento de nível 3 que registra apenas o fechamento de uma sessão PAM do sudo para root, o que é ruído operacional comum e não indica atividade maliciosa por si só. Há uma divergência de hostname (vitima01 no alerta e ubuntu-vm-lab no log), o que vale conferir.",
+  "proximos_passos": [
+    "Confirmar a origem do hostname divergente (vitima01 x ubuntu-vm-lab) para descartar problema de coleta ou de configuração do agente.",
+    "Correlacionar com o evento de abertura da sessão sudo (regra PAM de session opened) e verificar o usuário e o comando executado.",
+    "Se houver outros alertas de sudo ou de login fora do horário esperado no mesmo host, reavaliar o caso."
+  ]
+}

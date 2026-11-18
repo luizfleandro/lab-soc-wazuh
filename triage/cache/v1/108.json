@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1562.001",
+  "justificativa": "O agente Wazuh foi parado na vitima01, o que pode ser manutenção legítima ou uma tentativa de evasão de defesa (T1562.001). O alerta não traz contexto suficiente, como janela de manutenção ou atividade concorrente, para decidir.",
+  "proximos_passos": [
+    "Verificar com a equipe de administração se houve manutenção ou reinício planejado do agente na vitima01 nesse horário.",
+    "Consultar logs de autenticação e de comandos (auth.log, histórico de shell, sudo) da vitima01 em torno das 13:43 UTC para identificar quem parou o serviço.",
+    "Confirmar se o agente voltou a reportar ao manager e se há lacuna de eventos; se não houver justificativa, escalar como possível incidente."
+  ]
+}

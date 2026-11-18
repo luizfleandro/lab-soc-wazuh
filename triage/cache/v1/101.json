@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.85,
+  "tecnica_mitre": null,
+  "justificativa": "O evento é apenas o fechamento normal de uma sessão PAM do sudo para root, comportamento rotineiro de administração. O hostname do log (ubuntu-vm-lab) difere do campo maquina (vitima01), o que vale confirmar, mas não indica atividade maliciosa por si só.",
+  "proximos_passos": [
+    "Confirmar se ubuntu-vm-lab e vitima01 são o mesmo host (hostname, agente Wazuh e IP).",
+    "Verificar o evento de abertura da mesma sessão sudo (pam_unix session opened) e o usuário que executou sudo.",
+    "Checar se há outros alertas de sudo ou comandos privilegiados no mesmo período, para descartar uso indevido."
+  ]
+}

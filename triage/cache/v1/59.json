@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há uma única falha de autenticação PAM via SSH vinda de 192.168.122.1, o que pode ser erro de digitação e não necessariamente password guessing. O log cita o host 'ubuntu-vm-lab' enquanto o campo maquina é 'vitima01', o que precisa ser verificado.",
+  "proximos_passos": [
+    "Pesquisar no syslog e no auth.log tentativas repetidas de login a partir de 192.168.122.1 nos minutos anteriores e posteriores ao evento.",
+    "Verificar se houve login bem-sucedido do mesmo IP ou usuário após as falhas e confirmar a identidade do host de origem do log.",
+    "Confirmar com o dono do IP 192.168.122.1 se a tentativa foi legítima e checar o usuário alvo (uid=0 indica tentativa como root)."
+  ]
+}

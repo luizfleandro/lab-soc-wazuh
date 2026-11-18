@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.7,
+  "tecnica_mitre": "T1548.003",
+  "justificativa": "Sudo bem-sucedido para root por um usuário local em TTY (tty1), executando grep sobre logs do Wazuh, o que é consistente com uma ação administrativa legítima. Porém, o hostname no log (ubuntu-vm-lab) não coincide com o campo maquina (vitima01), o que precisa ser verificado antes de encerrar.",
+  "proximos_passos": [
+    "Confirmar com o administrador responsável se ele executou esse comando no console às 13:18:58 UTC.",
+    "Verificar por que o hostname do log_original (ubuntu-vm-lab) difere de maquina (vitima01), checando a configuração do agente Wazuh e o cadastro do host.",
+    "Revisar os sudo recentes do usuário ubuntu e as sessões no tty1 para detectar uso fora do padrão."
+  ]
+}

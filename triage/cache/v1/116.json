@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.65,
+  "tecnica_mitre": "T1078",
+  "justificativa": "Abertura de sessão sudo para root por um usuário administrativo comum (ubuntu, uid 1000) é uma operação rotineira e esperada em servidores Linux. Há uma divergência de hostname (ubuntu-vm-lab no log vs. vitima01 no alerta) e de horário (13:40 vs. 14:13), o que precisa ser verificado antes de encerrar.",
+  "proximos_passos": [
+    "Confirmar se o log foi coletado da máquina vitima01 e explicar a diferença de hostname e de horário (possível problema de sincronização de NTP ou de configuração do agente).",
+    "Verificar com o administrador responsável se o usuário ubuntu executou atividade com sudo nesse período e consultar o histórico de comandos (auditd ou /var/log/auth.log).",
+    "Caso a atividade não seja justificada, escalar para investigação e revisar outras sessões sudo e logins recentes do mesmo usuário."
+  ]
+}

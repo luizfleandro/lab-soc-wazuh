@@ -1,0 +1,10 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.9,
+  "tecnica_mitre": null,
+  "justificativa": "A regra 501 do Wazuh indica apenas que um agente foi iniciado e conectou ao manager, evento operacional comum em reinicializações ou atualizações do agente. Não há indicação de execução de código, acesso indevido ou atividade maliciosa no log.",
+  "proximos_passos": [
+    "Confirmar que houve reinicialização planejada ou manutenção do agente em vitima01 no horário indicado.",
+    "Se o início não for esperado, verificar uptime do host e logs do sistema para identificar a causa da reinicialização."
+  ]
+}

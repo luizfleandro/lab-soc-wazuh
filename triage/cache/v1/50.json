@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há uma única tentativa de login com usuário inexistente ('sshconnection') vinda de 192.168.122.1, sem sinais de sucesso ou de repetição que caracterizem força bruta. O hostname do alerta (vitima01) não coincide com o do log (ubuntu-vm-lab), o que impede confirmar a origem do evento.",
+  "proximos_passos": [
+    "Verificar se há outras tentativas de autenticação a partir de 192.168.122.1 nas últimas horas, incluindo sucessos após falhas.",
+    "Confirmar com o responsável pelo ambiente de laboratório se existe teste autorizado e validar a correspondência entre os hosts vitima01 e ubuntu-vm-lab.",
+    "Consultar /var/log/auth.log e o histórico de sessões SSH do host para descartar acesso bem-sucedido ou processo suspeito associado."
+  ]
+}

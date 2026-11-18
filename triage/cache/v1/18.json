@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "O rootcheck reportou /bin/cat como trojanizado usando uma assinatura genérica baseada em padrões de string, que costuma gerar falsos positivos em binários legítimos. Sem verificação de integridade do arquivo, não é possível descartar a presença de um rootkit ou binário adulterado.",
+  "proximos_passos": [
+    "Verificar a integridade do /bin/cat com o gerenciador de pacotes (rpm -Vf /bin/cat ou debsums -c coreutils) e comparar o hash com o pacote oficial.",
+    "Checar data de modificação do binário e se houve atualização de pacotes ou manutenção recente no host vitima01.",
+    "Procurar outros alertas do rootcheck e de integridade de arquivos (FIM) na mesma máquina e no mesmo período."
+  ]
+}

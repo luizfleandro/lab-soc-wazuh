@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1078",
+  "justificativa": "Abertura de sessão sudo para root pelo usuário ubuntu é atividade administrativa comum e o horário bate com o log original (diferença de 8 segundos). Porém, o hostname do log (ubuntu-vm-lab) não corresponde ao campo maquina (vitima01), o que precisa ser verificado antes de descartar.",
+  "proximos_passos": [
+    "Confirmar se o agente Wazuh 'vitima01' está associado ao host ubuntu-vm-lab, validando a origem real do evento.",
+    "Verificar com o responsável se o usuário ubuntu executou sudo nesse horário e se há uma mudança planejada ou ticket associado.",
+    "Revisar os comandos executados na sessão sudo (ex.: auditd ou histórico) caso a atividade não seja justificada."
+  ]
+}

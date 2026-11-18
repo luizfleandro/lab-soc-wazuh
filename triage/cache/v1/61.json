@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há apenas uma tentativa de login com usuário inexistente ('sshconnection') vinda de 192.168.122.1, o que pode ser uma varredura ou um cliente mal configurado, mas não há contexto de frequência. Também há divergência entre o campo 'maquina' (vitima01) e o host no log original (ubuntu-vm-lab), o que precisa ser esclarecido.",
+  "proximos_passos": [
+    "Pesquisar no histórico de autenticação as falhas e sucessos vindos de 192.168.122.1 nas últimas horas, verificando se há rajada de tentativas ou um login bem-sucedido em seguida.",
+    "Verificar se 'sshconnection' é um usuário, script ou aplicação conhecida e confirmar a origem do IP 192.168.122.1 com o responsável pela rede do laboratório.",
+    "Confirmar a identidade do agente que gerou o alerta, já que 'vitima01' e 'ubuntu-vm-lab' não coincidem."
+  ]
+}

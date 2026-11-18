@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1078",
+  "justificativa": "A abertura de sessão PAM para o usuário ubuntu via login é um evento comum de autenticação, mas o log original cita o host 'ubuntu-vm-lab' e o horário 13:42, enquanto o alerta indica 'vitima01' às 14:15, o que impede confirmar que é o mesmo evento. Sem a origem da sessão (TTY ou IP de origem), não é possível descartar uso indevido de conta válida.",
+  "proximos_passos": [
+    "Verificar no vitima01 os logins recentes com 'last -F' e 'who', confirmando se há sessão do ubuntu no horário do alerta e de onde ela partiu.",
+    "Confirmar a origem e o fuso horário do agente que gerou o alerta, comparando o hostname e o timestamp com o log original.",
+    "Se não houver sessão legítima correspondente, revisar /var/log/auth.log e os processos do usuário ubuntu em busca de atividade fora do padrão."
+  ]
+}

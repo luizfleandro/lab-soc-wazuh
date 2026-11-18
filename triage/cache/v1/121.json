@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.6,
+  "tecnica_mitre": null,
+  "justificativa": "O log mostra a abertura de sessão sudo para root pelo usuário ubuntu, o que é um uso administrativo comum e esperado. Há divergências a verificar: o hostname do log (ubuntu-vm-lab) não corresponde ao campo maquina (vitima01) e o horário do log (13:41) difere do horário do alerta (14:15).",
+  "proximos_passos": [
+    "Confirmar se o usuário ubuntu é administrador autorizado e se houve atividade privilegiada prevista nesse horário.",
+    "Verificar a origem do log e a configuração do agente Wazuh, para esclarecer a divergência de hostname e de horário.",
+    "Consultar o histórico de comandos executados via sudo (por exemplo, em auditd ou no log do sudo) para descartar uso indevido."
+  ]
+}

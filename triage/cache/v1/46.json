@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há apenas uma tentativa de login com usuário inexistente ('sshconnection') vinda de 192.168.122.1, um IP interno de rede virtual, o que não basta para caracterizar força bruta. Além disso, o nome do host no alerta (vitima01) não coincide com o do log (ubuntu-vm-lab), o que impede confirmar a origem do evento.",
+  "proximos_passos": [
+    "Pesquisar em /var/log/auth.log outras falhas ou logins aceitos a partir de 192.168.122.1 antes e depois das 13:10:12 UTC.",
+    "Confirmar com o administrador se 192.168.122.1 é um host conhecido (gateway do libvirt, host de gerenciamento ou ferramenta de teste) e se o usuário 'sshconnection' é esperado.",
+    "Verificar a correspondência entre o nome do agente Wazuh (vitima01) e o host real (ubuntu-vm-lab) para garantir que o alerta vem da máquina correta."
+  ]
+}

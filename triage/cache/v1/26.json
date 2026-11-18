@@ -1,0 +1,11 @@
+{
+  "veredito": "incidente",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1014",
+  "justificativa": "O rootcheck reportou /bin/ls como possivelmente trojanizado com base em uma assinatura genérica, o que pode gerar falsos positivos. Ainda assim, alteração em binário de sistema é indicador sério de rootkit e exige verificação.",
+  "proximos_passos": [
+    "Comparar o hash de /bin/ls com o pacote original (rpm -Vf /bin/ls ou debsums -c coreutils) e verificar a integridade com AIDE ou similar.",
+    "Executar rkhunter/chkrootkit em vitima01 e revisar processos, conexões de rede e cron jobs suspeitos.",
+    "Verificar logins recentes, alterações de arquivos em /bin, /sbin e /usr/bin e eventos de escalada de privilégio na mesma janela de tempo."
+  ]
+}

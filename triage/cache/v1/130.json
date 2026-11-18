@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1562.001",
+  "justificativa": "O agente Wazuh foi parado na máquina vitima01, o que pode ser evasão de defesa (T1562.001) ou uma parada legítima de manutenção. O alerta isolado não traz informação suficiente para diferenciar os dois cenários.",
+  "proximos_passos": [
+    "Verificar com o time de administração se houve manutenção ou reinício planejado do agente nesse horário.",
+    "Checar logins, sudo e processos em vitima01 por volta de 2026-11-16T14:23 UTC em busca de atividade administrativa não esperada.",
+    "Confirmar se o agente voltou a reportar e procurar outros alertas da mesma máquina nos minutos seguintes."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há apenas uma tentativa de senha com usuário inexistente ('sshconnection') vinda de 192.168.122.1, um endereço interno típico de gateway de rede virtual, o que não basta para caracterizar força bruta. O hostname do log (ubuntu-vm-lab) não corresponde ao campo 'maquina' (vitima01), o que sugere um ambiente de laboratório ou teste.",
+  "proximos_passos": [
+    "Pesquisar no auth.log/journal por outras tentativas do IP 192.168.122.1 e por logins bem-sucedidos posteriores, verificando se houve padrão de força bruta.",
+    "Confirmar com o time responsável se há teste ou atividade autorizada nesse host e se 192.168.122.1 é um equipamento conhecido, e checar se existe a conta 'sshconnection'.",
+    "Verificar a consistência do agente Wazuh (nome do host divergente) e, se o padrão se repetir, escalar para investigação como incidente."
+  ]
+}

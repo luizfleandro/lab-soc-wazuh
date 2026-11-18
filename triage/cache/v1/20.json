@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "O rootcheck reporta /bin/uname como possivelmente trojanizado, o que é um indicador típico de rootkit, mas a assinatura usada é genérica e casa com padrões comuns em shell scripts, o que sugere falso positivo. Sem verificar a integridade do binário, não há base suficiente para decidir.",
+  "proximos_passos": [
+    "Comparar o hash de /bin/uname com o pacote original (rpm -Vf /bin/uname ou debsums -c coreutils) e checar a data de modificação.",
+    "Executar rkhunter ou chkrootkit no host e revisar os resultados.",
+    "Verificar outros binários do sistema (ls, ps, netstat) e conferir logins e processos recentes em vitima01."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A regra genérica de rootcheck casa strings comuns como '/bin/sh' e costuma gerar falsos positivos, mas um /bin/echo alterado pode indicar substituição de binário de sistema por rootkit. Sem verificação de integridade do arquivo, não há base para decidir entre incidente e falso positivo.",
+  "proximos_passos": [
+    "Verificar a integridade de /bin/echo com o gerenciador de pacotes (rpm -Vf /bin/echo ou debsums -c coreutils) e comparar o hash SHA256 com o pacote original.",
+    "Checar data de modificação, dono e permissões de /bin/echo (stat, ls -la) e procurar outros binários do sistema alterados recentemente (find /bin /usr/bin -mtime -7).",
+    "Verificar logins e processos recentes na vitima01 (last, ps auxf) e, se o binário estiver alterado, escalar para resposta a incidente e isolar o host."
+  ]
+}

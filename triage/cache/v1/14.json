@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A regra rootcheck usa uma assinatura genérica, que costuma gerar falsos positivos em binários do sistema, mas a alteração de /bin/chmod também pode indicar um rootkit ou binário trojanizado. Sem verificação de integridade do arquivo, não há base suficiente para decidir.",
+  "proximos_passos": [
+    "Verificar a integridade do pacote com 'rpm -V coreutils' ou 'debsums -c coreutils' e comparar o hash de /bin/chmod com a versão do fabricante.",
+    "Checar a data de modificação e o dono do arquivo, além de logins, processos e conexões de rede suspeitos em vitima01 no mesmo período.",
+    "Se a integridade falhar, escalar para o nível 2 e isolar o host para investigação forense."
+  ]
+}

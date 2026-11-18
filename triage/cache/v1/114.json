@@ -1,0 +1,10 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.9,
+  "tecnica_mitre": null,
+  "justificativa": "Alerta de nível 3 de encerramento de sessão PAM do sudo para root, evento comum e legítimo de uso administrativo, sem indicadores de abuso. O log indica o host ubuntu-vm-lab, diferente do campo maquina (vitima01), o que merece uma verificação rápida.",
+  "proximos_passos": [
+    "Confirmar a origem do evento: o hostname no log (ubuntu-vm-lab) não corresponde ao agente vitima01.",
+    "Verificar se houve sudo no mesmo período (13:40) que justifique a sessão e se o usuário que a iniciou é esperado."
+  ]
+}

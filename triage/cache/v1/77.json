@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.4,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há apenas uma falha de autenticação PAM via SSH vinda de 192.168.122.1, o que é insuficiente para caracterizar password guessing. O hostname no log (ubuntu-vm-lab) difere do campo maquina (vitima01), o que precisa ser verificado.",
+  "proximos_passos": [
+    "Pesquisar no Wazuh/auth.log por falhas repetidas de rhost=192.168.122.1 e por logins bem-sucedidos desse IP na mesma janela de tempo.",
+    "Confirmar se 192.168.122.1 é um host autorizado e validar a origem do log, já que o hostname divergente pode indicar agente mal configurado ou log de outra máquina.",
+    "Se houver múltiplas falhas seguidas de sucesso, escalar como incidente e avaliar bloqueio do IP e reset de credenciais do usuário afetado."
+  ]
+}

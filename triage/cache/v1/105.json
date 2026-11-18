@@ -1,0 +1,11 @@
+{
+  "veredito": "incidente",
+  "confianca": 0.85,
+  "tecnica_mitre": "T1136.001",
+  "justificativa": "O usuário 'ubuntu' usou sudo para executar como root o comando useradd, criando uma conta local com shell /bin/bash e comentário 'evil_account', o que indica criação de backdoor ou persistência. Há também divergência entre o host do alerta (vitima01) e o host do log (ubuntu-vm-lab), além de defasagem de cerca de 17 minutos entre o log e o alerta.",
+  "proximos_passos": [
+    "Verificar em /etc/passwd e /etc/shadow se a conta 'evil_username' existe, quando foi criada e se possui chave SSH ou sudoers associados, e desabilitá-la se confirmada.",
+    "Confirmar com o responsável pelo usuário 'ubuntu' e pela sessão tty1 se a ação foi autorizada e revisar o histórico de comandos e logins recentes (last, auth.log) para identificar como a sessão foi obtida.",
+    "Validar a origem do log, a correspondência entre vitima01 e ubuntu-vm-lab e a sincronização de horários, e verificar outras ações do mesmo usuário ou novas contas criadas no host."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.7,
+  "tecnica_mitre": "T1078",
+  "justificativa": "Abertura de sessão sudo para root pelo usuário ubuntu (uid=1000) é um padrão comum de administração e não há comando suspeito nem falhas de autenticação associadas. O hostname no log (ubuntu-vm-lab) difere do campo maquina (vitima01), o que limita a confiança.",
+  "proximos_passos": [
+    "Confirmar no log de auditoria (linha COMMAND do sudo) qual comando foi executado nessa sessão.",
+    "Verificar a origem do mismatch de hostname entre o agente Wazuh (vitima01) e o log (ubuntu-vm-lab).",
+    "Confirmar com o responsável que o usuário ubuntu realizou atividade administrativa às 13:17 UTC."
+  ]
+}

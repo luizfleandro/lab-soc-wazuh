@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1554",
+  "justificativa": "A assinatura genérica do rootcheck, com padrões como '/bin/sh' e '/dev/', costuma gerar falsos positivos em binários do coreutils, mas um md5sum trojanizado indicaria comprometimento de binário do sistema. Sem verificação de integridade do arquivo, não há dados suficientes para decidir.",
+  "proximos_passos": [
+    "Verificar a integridade de /usr/bin/md5sum com o gerenciador de pacotes (rpm -V ou debsums) e comparar o hash com a versão oficial.",
+    "Checar o horário da modificação, o dono e as permissões do arquivo, e correlacionar com logins e comandos recentes no vitima01.",
+    "Se a integridade falhar, escalar como incidente e isolar o host para análise forense; se o pacote estiver íntegro, revisar a assinatura do rootcheck e considerar o alerta falso positivo."
+  ]
+}

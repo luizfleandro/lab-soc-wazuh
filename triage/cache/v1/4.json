@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A assinatura usada é genérica e casa com strings comuns como 'bash' e '/bin/sh', que podem aparecer legitimamente no binário /bin/env, o que sugere falso positivo do rootcheck. Porém, a detecção de um binário de sistema trojanizado é grave e não há dados suficientes para descartar um rootkit.",
+  "proximos_passos": [
+    "Verificar a integridade do pacote com 'rpm -V coreutils' ou 'debsums -c' e comparar o hash de /bin/env com a versão do fabricante ou de outro host equivalente.",
+    "Checar a data de modificação e o dono de /bin/env e procurar alterações recentes no host, com auditoria de processos e conexões de rede.",
+    "Se a integridade falhar, isolar o host vitima01 e escalar para análise forense; se o pacote estiver íntegro, registrar como falso positivo e avaliar ajuste da regra 510."
+  ]
+}

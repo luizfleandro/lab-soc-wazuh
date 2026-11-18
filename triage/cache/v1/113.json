@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.8,
+  "tecnica_mitre": "T1548.003",
+  "justificativa": "O usuário ubuntu executou um comando administrativo de rotina (apt update) via sudo em TTY local, com um padrão típico de manutenção. Há divergência entre o campo maquina (vitima01) e o host no log (ubuntu-vm-lab), e o horário do log (13:40) difere do alerta (14:13), o que sugere verificar a origem antes de encerrar.",
+  "proximos_passos": [
+    "Confirmar que o host vitima01 corresponde ao ubuntu-vm-lab e checar o agente Wazuh e a origem do evento.",
+    "Verificar se o usuário ubuntu executou sudo com frequência semelhante e se o apt update estava previsto como manutenção.",
+    "Revisar o histórico de comandos sudo do usuário e os logs de autenticação nas horas próximas para descartar atividade fora do padrão."
+  ]
+}

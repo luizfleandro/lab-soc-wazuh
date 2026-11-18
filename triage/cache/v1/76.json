@@ -1,0 +1,11 @@
+{
+  "veredito": "incidente",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Tentativa de login SSH com usuário inexistente ('testing') a partir de 192.168.122.1 é um padrão comum de enumeração de contas ou varredura, o que justifica investigação. Há apenas uma tentativa no log, e o hostname do log (ubuntu-vm-lab) diverge do campo maquina (vitima01), o que reduz a confiança.",
+  "proximos_passos": [
+    "Pesquisar em /var/log/auth.log outras tentativas de login de 192.168.122.1 e identificar se há sucesso após falhas ou múltiplos usuários testados.",
+    "Confirmar qual host é 192.168.122.1 (gateway libvirt ou host de teste autorizado) e validar a correspondência entre vitima01 e ubuntu-vm-lab.",
+    "Verificar se o sshd está exposto indevidamente e se há bloqueio ativo (fail2ban ou regras de firewall) para a origem."
+  ]
+}

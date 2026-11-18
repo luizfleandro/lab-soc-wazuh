@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A regra rootcheck usa uma assinatura genérica que casa com strings comuns de shell e pode gerar falsos positivos em binários legítimos, mas o alerta indica um possível binário de sistema (/usr/bin/uname) alterado, o que exige verificação de integridade antes de descartá-lo. Sem o hash ou a validação pelo gerenciador de pacotes, não há evidência suficiente para decidir.",
+  "proximos_passos": [
+    "Verificar a integridade de /usr/bin/uname com o gerenciador de pacotes (rpm -Vf /usr/bin/uname ou debsums -c coreutils) e comparar o hash SHA256 com a versão oficial.",
+    "Consultar outros alertas rootcheck/syscheck da vitima01 no mesmo período e checar mudanças recentes em /usr/bin e /bin, além de processos e conexões incomuns.",
+    "Se a diferença for confirmada, isolar a máquina, coletar a imagem do binário e escalar para o nível 2 como possível rootkit."
+  ]
+}

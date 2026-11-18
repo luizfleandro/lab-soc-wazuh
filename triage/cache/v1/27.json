@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A regra 510 do rootcheck usa assinatura genérica que casa com strings comuns como 'bash' e '/bin/sh', o que gera falsos positivos conhecidos, mas a alteração de /usr/bin/ls seria grave se confirmada. Sem verificação de integridade do binário, não é possível decidir.",
+  "proximos_passos": [
+    "Verificar a integridade do binário com o gerenciador de pacotes (rpm -Vf /usr/bin/ls ou dpkg -V coreutils) e comparar o hash SHA-256 com o pacote original.",
+    "Checar mtime/ctime de /usr/bin/ls e procurar alterações recentes ou logins/sudo suspeitos no mesmo período em vitima01.",
+    "Se a diferença for confirmada, isolar o host, preservar evidências e escalar para o nível 2 para análise de rootkit."
+  ]
+}

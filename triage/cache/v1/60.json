@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há uma única tentativa de login SSH falha com usuário inexistente ('sshconnection') vinda de 192.168.122.1, que parece ser o gateway NAT padrão do libvirt, e não há repetição que indique brute force. O campo 'maquina' (vitima01) também não corresponde ao hostname no log (ubuntu-vm-lab), o que impede confirmar a origem do evento.",
+  "proximos_passos": [
+    "Confirmar se 192.168.122.1 é o gateway do ambiente de laboratório e verificar se há outras tentativas da mesma origem nas últimas horas.",
+    "Conferir se o usuário 'sshconnection' existe ou tem relação com alguma automação ou teste conhecido, e verificar o mapeamento entre 'vitima01' e 'ubuntu-vm-lab'.",
+    "Caso surjam múltiplas tentativas ou logins bem-sucedidos da mesma origem, escalar como incidente e analisar o auth.log completo."
+  ]
+}

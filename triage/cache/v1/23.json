@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.45,
+  "tecnica_mitre": "T1554",
+  "justificativa": "O rootcheck marcou /usr/bin/date como trojanizado usando uma assinatura genérica baseada em strings comuns em binários (como '/bin/sh' e '/dev/'), o que costuma gerar falsos positivos. Sem verificação de integridade do binário, porém, não é possível descartar a substituição de um utilitário do sistema.",
+  "proximos_passos": [
+    "Verificar a integridade do pacote com 'dpkg -V coreutils' (Debian/Ubuntu) ou 'rpm -Vf /usr/bin/date' (RHEL/CentOS) e comparar o hash do binário com o do pacote original.",
+    "Checar mtime, ctime, dono e permissões de /usr/bin/date e revisar alterações recentes no host, incluindo logs de instalação e atualização de pacotes.",
+    "Se a integridade falhar, isolar o host, preservar evidências e escalar para o nível 2 para investigar possível comprometimento."
+  ]
+}

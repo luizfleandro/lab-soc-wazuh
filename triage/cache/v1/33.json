@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1554",
+  "justificativa": "A assinatura genérica do rootcheck, baseada em padrões de string como '/bin/sh' e 'bash', gera muitos falsos positivos em binários legítimos, mas um possível trojan em /usr/bin/chown seria grave por permitir escalada de privilégio. Sem verificação de integridade do binário, a evidência é insuficiente para decidir.",
+  "proximos_passos": [
+    "Verificar a integridade do binário com 'rpm -Vf /usr/bin/chown' ou 'dpkg -V coreutils' e comparar o hash SHA256 com o pacote oficial.",
+    "Checar data de modificação, dono e permissões de /usr/bin/chown e procurar outros binários do sistema alterados recentemente.",
+    "Correlacionar com logs de autenticação, processos e conexões de rede de vitima01 no período próximo a 2026-11-16T13:08 UTC."
+  ]
+}

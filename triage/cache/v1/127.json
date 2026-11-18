@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.6,
+  "tecnica_mitre": null,
+  "justificativa": "Há uma única falha de autenticação no console tty1 para o usuário 'ubuntu', padrão compatível com erro de digitação de senha, e não há sinal de tentativas repetidas nem de força bruta. A confiança é moderada porque o alerta isolado não mostra o que aconteceu depois.",
+  "proximos_passos": [
+    "Verificar em /var/log/auth.log se houve novas falhas ou um login bem-sucedido para 'ubuntu' logo após o evento.",
+    "Confirmar com o responsável pela VM de laboratório se o usuário 'ubuntu' estava em uso naquele horário.",
+    "Correlacionar com alertas de falhas repetidas (regra de brute force) na mesma máquina nas horas seguintes."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "veredito": "incidente",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1110",
+  "justificativa": "Falhas repetidas de autenticação PAM via SSH a partir de 192.168.122.1 (nível 10) são compatíveis com tentativa de força bruta ou credential stuffing. O hostname no log (ubuntu-vm-lab) não coincide com o campo maquina (vitima01), o que impede confirmar a origem do evento.",
+  "proximos_passos": [
+    "Verificar em /var/log/auth.log e journalctl se houve login bem-sucedido de 192.168.122.1 após as falhas e quais usuários foram alvo.",
+    "Confirmar se o hostname do agente Wazuh corresponde ao host real (vitima01 vs ubuntu-vm-lab) e se 192.168.122.1 é um host autorizado, como um gateway de laboratório.",
+    "Se a origem não for legítima, bloquear o IP temporariamente e revisar a configuração do sshd (fail2ban, desabilitar senha, restringir acesso)."
+  ]
+}

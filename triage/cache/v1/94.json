@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.55,
+  "tecnica_mitre": null,
+  "justificativa": "Criação de grupo local (teste_lab, GID 1001) com nome sugestivo de laboratório pode ser legítima, mas o alerta não mostra o usuário responsável nem o contexto da ação. O hostname no log (ubuntu-vm-lab) difere do agente (vitima01), o que precisa ser esclarecido.",
+  "proximos_passos": [
+    "Identificar o usuário e o processo que executou o useradd (auth.log, sudo e histórico do shell) e confirmar se a ação foi autorizada.",
+    "Verificar se o grupo teste_lab recebeu membros e se há outras criações de usuários ou grupos no mesmo período.",
+    "Confirmar se o log veio da máquina vitima01 ou de outra VM, já que o hostname divergente pode indicar configuração incorreta do agente ou origem diferente do evento."
+  ]
+}

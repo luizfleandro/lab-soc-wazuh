@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Foi registrada uma única tentativa de senha para o usuário inexistente 'sshconnection' vinda de 192.168.122.1, o que pode ser ruído de um laboratório ou o início de uma enumeração. O campo 'maquina' (vitima01) não corresponde ao host do log (ubuntu-vm-lab), o que impede confirmar a origem do evento.",
+  "proximos_passos": [
+    "Verificar no auth.log e no journal se há mais tentativas dessa origem e, principalmente, algum login bem-sucedido posterior.",
+    "Confirmar se o usuário 'sshconnection' e o IP 192.168.122.1 são esperados nesse ambiente e validar a correspondência entre vitima01 e ubuntu-vm-lab.",
+    "Se houver repetição de tentativas de usuários diferentes, bloquear temporariamente a origem e escalar para investigação."
+  ]
+}

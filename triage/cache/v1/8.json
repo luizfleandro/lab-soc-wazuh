@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.7,
+  "tecnica_mitre": "T1078",
+  "justificativa": "O log mostra uma sessão sudo aberta pelo usuário ubuntu (uid=1000) para root, o que é uso comum de privilégio administrativo em VMs de laboratório. O nome da máquina no alerta (vitima01) não confere com o hostname no log (ubuntu-vm-lab), o que impede confirmar a origem com segurança.",
+  "proximos_passos": [
+    "Confirmar com o responsável se o usuário ubuntu executou esse sudo no horário 13:07:30 e qual comando foi executado (auditd ou histórico sudo).",
+    "Verificar por que o nome do agente (vitima01) difere do hostname do log (ubuntu-vm-lab) e se há erro de configuração do agente Wazuh ou de encaminhamento de logs.",
+    "Monitorar sessões sudo para root em seguida e escalar para incidente se houver logins ou comandos não esperados."
+  ]
+}

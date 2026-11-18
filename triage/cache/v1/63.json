@@ -1,0 +1,11 @@
+{
+  "veredito": "incidente",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1110",
+  "justificativa": "Múltiplas falhas de autenticação PAM no sshd a partir do IP 192.168.122.1 com nível 10 indicam possível força bruta contra o SSH. O nome do host no log (ubuntu-vm-lab) difere do campo maquina (vitima01), o que pode ser um teste de laboratório, mas isso não está confirmado.",
+  "proximos_passos": [
+    "Verificar em /var/log/auth.log quais usuários foram alvo e se houve login bem-sucedido do mesmo IP após as falhas.",
+    "Confirmar se 192.168.122.1 é um host autorizado ou um teste de laboratório conhecido, e checar a correspondência entre vitima01 e ubuntu-vm-lab.",
+    "Se não houver justificativa, bloquear temporariamente o IP de origem e avaliar a exigência de chave SSH e fail2ban."
+  ]
+}

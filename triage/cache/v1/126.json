@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há uma única falha de autenticação PAM em um login local (tty1, sem rhost) para o usuário ubuntu, o que pode ser simples erro de digitação. O nome do host no log (ubuntu-vm-lab) não corresponde ao campo maquina (vitima01), e o horário do log (13:42) difere do alerta (14:15), o que impede concluir com segurança.",
+  "proximos_passos": [
+    "Confirmar se o log pertence ao vitima01, verificando o hostname real e a origem do agente Wazuh, e checar atraso de ingestão ou desvio de horário (NTP).",
+    "Pesquisar no auth.log/journal por novas falhas ou por um login bem-sucedido do usuário ubuntu logo após a falha, em janela de alguns minutos e nas horas seguintes.",
+    "Confirmar com o responsável pela máquina se houve acesso físico ou no console naquele horário; escalar para investigação se houver falhas repetidas ou sucesso posterior."
+  ]
+}

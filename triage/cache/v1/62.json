@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há uma única tentativa de senha para um usuário inexistente ('sshconnection') vinda de 192.168.122.1, um endereço privado que pode ser o gateway de uma rede virtual, o que não basta para caracterizar força bruta. O nome da máquina no alerta ('vitima01') também não coincide com o host do log ('ubuntu-vm-lab'), o que precisa ser esclarecido.",
+  "proximos_passos": [
+    "Pesquisar no auth.log e no journald por outras falhas de SSH vindas de 192.168.122.1 ou com o usuário 'sshconnection' nas horas próximas ao evento.",
+    "Confirmar qual host tem o IP 192.168.122.1 e se a tentativa foi feita por um processo ou pessoa autorizada, como um teste de laboratório.",
+    "Verificar a configuração do agente Wazuh para confirmar por que o nome 'vitima01' não corresponde ao hostname 'ubuntu-vm-lab'."
+  ]
+}

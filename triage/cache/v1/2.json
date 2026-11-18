@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A regra 510 do rootcheck usa assinaturas genéricas por padrão de texto, o que gera muitos falsos positivos em binários legítimos como /bin/ls. Como a detecção pode indicar um rootkit que substitui binários do sistema, a verificação de integridade é necessária antes de descartar o alerta.",
+  "proximos_passos": [
+    "Verificar a integridade de /bin/ls com o gerenciador de pacotes (rpm -Vf /bin/ls ou debsums -c coreutils) e comparar o hash com a versão oficial do pacote.",
+    "Checar outros binários do sistema e indicadores de rootkit (rkhunter/chkrootkit, processos ocultos, módulos de kernel não autorizados, alterações recentes em /bin e /usr/bin).",
+    "Revisar logins, comandos executados e alterações de arquivos na vitima01 próximo ao horário 2026-11-16T13:07:36Z."
+  ]
+}

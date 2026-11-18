@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.7,
+  "tecnica_mitre": "T1078",
+  "justificativa": "O log mostra uma sessão sudo aberta para root pelo usuário ubuntu, o que é uso administrativo comum e de baixo risco por si só. Há uma divergência de nome de host (alerta 'vitima01' e log 'ubuntu-vm-lab') que impede confirmar a origem do evento com segurança.",
+  "proximos_passos": [
+    "Confirmar se o usuário ubuntu é administrador autorizado e se houve manutenção planejada nesse horário (13:19 UTC).",
+    "Verificar no auditd ou no histórico de comandos quais comandos foram executados sob o sudo.",
+    "Esclarecer a divergência entre o nome de host do alerta e o do log para descartar que o agente esteja associado à máquina errada."
+  ]
+}

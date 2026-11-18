@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.65,
+  "tecnica_mitre": "T1548.003",
+  "justificativa": "O usuário 'ubuntu' executou via sudo, no console tty1, um 'apt upgrade', que é uma manutenção rotineira e legítima. Porém, o hostname do alerta ('vitima01') difere do hostname no log ('ubuntu-vm-lab') e há defasagem de cerca de 33 minutos entre o log e o alerta, o que exige confirmação antes de encerrar.",
+  "proximos_passos": [
+    "Confirmar se 'vitima01' e 'ubuntu-vm-lab' são o mesmo host, verificando a configuração de hostname e o agente Wazuh que originou o evento.",
+    "Validar com o responsável se houve janela de manutenção ou atualização nesse horário e checar /var/log/apt/history.log e /var/log/auth.log.",
+    "Verificar se há outros eventos de sudo ou logins de tty1 do usuário 'ubuntu' no mesmo período, para descartar uso indevido de credenciais."
+  ]
+}

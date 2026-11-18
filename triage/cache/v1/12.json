@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "O rootcheck usou uma assinatura genérica (Generic) cujo padrão inclui strings comuns como '/bin/sh' e 'bash', o que costuma gerar falsos positivos. Ainda assim, uma possível troca do binário /bin/chown por versão trojanizada seria grave, e só a verificação de integridade pode confirmar ou descartar isso.",
+  "proximos_passos": [
+    "Verificar a integridade do binário com 'rpm -Vf /bin/chown' ou 'dpkg -V coreutils' e comparar o hash SHA-256 com o do pacote original.",
+    "Checar mtime/ctime de /bin/chown e outros binários do sistema, além de rodar rkhunter ou chkrootkit para buscar outros indicadores de rootkit.",
+    "Revisar logins recentes, processos incomuns e alterações em cron ou serviços no vitima01; se a integridade falhar, escalar como incidente."
+  ]
+}

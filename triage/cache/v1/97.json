@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1548.003",
+  "justificativa": "Um usuário com sudo executou 'tee -a /etc/hosts' em sessão interativa (tty1), o que pode ser uma alteração administrativa legítima, mas modificar o /etc/hosts pode redirecionar resolução de nomes. O log indica o host 'ubuntu-vm-lab', enquanto o alerta indica 'vitima01', e o conteúdo gravado não aparece no alerta.",
+  "proximos_passos": [
+    "Confirmar com o usuário 'ubuntu' se a alteração em /etc/hosts foi autorizada e comparar o arquivo com um baseline ou backup.",
+    "Identificar o conteúdo acrescentado e a origem da sessão tty1 (login local ou remoto, histórico de comandos e auditoria).",
+    "Validar a discrepância de hostname entre 'vitima01' e 'ubuntu-vm-lab' para descartar problema de correlação de logs ou agente mal associado."
+  ]
+}

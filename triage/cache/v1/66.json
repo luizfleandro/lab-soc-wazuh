@@ -1,0 +1,11 @@
+{
+  "veredito": "incidente",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Tentativa de autenticação SSH com usuário inexistente ('sshconnection') a partir de 192.168.122.1 é suspeita e pode indicar enumeração ou password guessing, embora seja um único evento. O hostname do alerta (vitima01) não confere com o do log (ubuntu-vm-lab), o que precisa ser esclarecido.",
+  "proximos_passos": [
+    "Verificar se 192.168.122.1 é um host conhecido e se há mais tentativas de login da mesma origem nas últimas horas.",
+    "Confirmar a origem real do log e corrigir a divergência entre vitima01 e ubuntu-vm-lab.",
+    "Checar se o usuário 'sshconnection' existe ou foi usado em testes autorizados e revisar logs de autenticação bem-sucedida da origem."
+  ]
+}

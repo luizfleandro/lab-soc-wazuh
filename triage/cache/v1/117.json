@@ -1,0 +1,10 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.9,
+  "tecnica_mitre": null,
+  "justificativa": "Alerta de nível 3 (regra 5502) indicando apenas o fim de uma sessão PAM do sudo para root, evento operacional comum de administração. Não há indícios de comando suspeito, falha de autenticação ou acesso não autorizado no log.",
+  "proximos_passos": [
+    "Confirmar com o administrador que houve uma sessão sudo legítima por volta de 13:40 em vitima01.",
+    "Correlacionar com o evento de abertura da sessão sudo (regra 5501) e com os comandos executados, se o auditd estiver ativo."
+  ]
+}

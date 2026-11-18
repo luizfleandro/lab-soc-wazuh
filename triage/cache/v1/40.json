@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A regra genérica de rootcheck casou o binário /bin/uname com a assinatura 'bash|^/bin/sh|...', um padrão amplo que costuma gerar falsos positivos, mas a mensagem de 'versão trojanizada' de um utilitário do sistema é grave e não pode ser descartada sem verificação de integridade. Faltam dados como hash, data de modificação e o pacote de origem do arquivo.",
+  "proximos_passos": [
+    "Verificar a integridade do pacote com 'rpm -Vf /bin/uname' ou 'dpkg -V coreutils' e comparar o hash SHA256 com a versão oficial do fabricante.",
+    "Checar mtime/ctime e o dono de /bin/uname e procurar outros binários do sistema alterados recentemente, além de outros alertas de rootcheck na mesma máquina (vitima01).",
+    "Se a alteração não for explicada por atualização legítima, isolar a máquina e iniciar resposta a incidente com análise de processos e conexões de rede."
+  ]
+}

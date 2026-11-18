@@ -1,0 +1,11 @@
+{
+  "veredito": "incidente",
+  "confianca": 0.75,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Tentativa de senha para um usuário inexistente ('sshconnection') a partir de 192.168.122.1, com nível 10 e padrão típico de força bruta contra SSH. O alerta isolado não mostra volume nem sucesso de login, e o hostname do alerta (vitima01) diverge do log (ubuntu-vm-lab), o que deve ser verificado.",
+  "proximos_passos": [
+    "Pesquisar em /var/log/auth.log por tentativas de 192.168.122.1 e por qualquer 'Accepted password' ou 'Accepted publickey' posterior a 13:10:55.",
+    "Identificar a origem 192.168.122.1 (gateway/bridge do libvirt ou outra VM) e confirmar se há teste autorizado; restringir o acesso SSH com firewall se não houver justificativa.",
+    "Confirmar a correspondência entre maquina 'vitima01' e host 'ubuntu-vm-lab' antes de escalar o caso."
+  ]
+}

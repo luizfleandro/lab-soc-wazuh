@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há uma única tentativa de login SSH com senha para um usuário inexistente ('sshconnection') vinda de 192.168.122.1, o gateway de rede padrão do libvirt, o que pode ser teste de laboratório ou tentativa de força bruta. O nome do host no log (ubuntu-vm-lab) não coincide com o campo 'maquina' (vitima01), o que também precisa ser esclarecido.",
+  "proximos_passos": [
+    "Pesquisar no auth.log e no Wazuh outras tentativas de login a partir de 192.168.122.1 e confirmar se houve padrão de força bruta ou varredura de usuários.",
+    "Confirmar a origem do tráfego (host, VM ou atividade de teste autorizada) e verificar por que o nome do host no log difere de 'vitima01'.",
+    "Verificar se existe o usuário 'sshconnection' ou qualquer login bem-sucedido posterior desse IP; se houver sucesso, escalar como incidente."
+  ]
+}

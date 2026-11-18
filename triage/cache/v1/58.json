@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.4,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Foi registrada uma única tentativa de login SSH com usuário inexistente ('sshconnection') a partir de 192.168.122.1, um IP interno de laboratório, o que pode ser ruído de teste ou de um script, mas também pode ser o início de adivinhação de credenciais. Não há tentativas repetidas ou sucesso de autenticação no alerta, e o hostname do alerta (vitima01) não coincide com o do log (ubuntu-vm-lab).",
+  "proximos_passos": [
+    "Pesquisar no log 'sshd' por outras falhas de autenticação vindas de 192.168.122.1 nas horas seguintes, verificando se há volume crescente ou sucesso posterior.",
+    "Confirmar qual host gerou o evento e por que o nome 'vitima01' difere de 'ubuntu-vm-lab', e identificar a origem 192.168.122.1 e se ela corresponde a uma máquina de teste conhecida.",
+    "Verificar se o usuário 'sshconnection' existe ou é usado por alguma automação e, se o padrão se repetir, avaliar bloqueio temporário do IP de origem."
+  ]
+}

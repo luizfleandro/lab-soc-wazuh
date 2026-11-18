@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.6,
+  "tecnica_mitre": null,
+  "justificativa": "Abertura de sessão sudo pelo usuário ubuntu (uid 1000) para root é um padrão comum de administração em VM de laboratório, sem outros indicadores de comprometimento. Há uma divergência de hostname (alerta em vitima01, log em ubuntu-vm-lab) que impede confirmar com segurança a origem do evento.",
+  "proximos_passos": [
+    "Confirmar a origem do log e a correspondência entre vitima01 e ubuntu-vm-lab no inventário.",
+    "Verificar com o administrador responsável se o usuário ubuntu executou comandos com sudo nesse horário.",
+    "Revisar os comandos executados na sessão (ex.: auditd ou histórico) caso a atividade não seja esperada."
+  ]
+}

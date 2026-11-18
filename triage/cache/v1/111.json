@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.85,
+  "tecnica_mitre": null,
+  "justificativa": "A regra 5502 registra apenas o encerramento de uma sessão PAM do sudo para root, que é um evento comum e de baixo risco. Há uma divergência de contexto (hostname no log 'ubuntu-vm-lab' vs. 'vitima01' no alerta, e horário 13:23 vs. 13:57), o que merece verificação antes de encerrar.",
+  "proximos_passos": [
+    "Confirmar no auth.log de vitima01 a abertura correspondente da sessão sudo e o usuário que a executou.",
+    "Verificar por que o hostname do log original difere do agente (possível erro de coleta, clone de VM ou decoder).",
+    "Se a sessão root não for esperada, correlacionar com comandos executados via sudo no mesmo período."
+  ]
+}

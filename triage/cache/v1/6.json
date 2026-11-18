@@ -1,0 +1,10 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.9,
+  "tecnica_mitre": null,
+  "justificativa": "Alerta de nível 3 indicando apenas o encerramento de uma sessão PAM do sudo para root, evento rotineiro de administração. Não há comando suspeito, falha de autenticação ou outro indicador de atividade maliciosa no log.",
+  "proximos_passos": [
+    "Confirmar com o administrador responsável que houve uso legítimo de sudo na janela de 13:07 em vitima01.",
+    "Se houver dúvida, correlacionar com o log de abertura da sessão sudo (pam_unix session opened) e com o comando executado."
+  ]
+}

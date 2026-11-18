@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1554",
+  "justificativa": "O rootcheck acusou o /usr/bin/echo com uma assinatura genérica (regex que casa com strings comuns como '/bin/sh' e 'bash'), o que gera falsos positivos conhecidos, mas não é possível descartar a troca do binário sem verificar sua integridade. A decisão depende de comparar o arquivo com o pacote original.",
+  "proximos_passos": [
+    "Verificar a integridade do binário com 'debsums -c coreutils' ou 'rpm -Vf /usr/bin/echo' e comparar o hash SHA256 com o do pacote oficial.",
+    "Checar data de modificação, dono e permissões de /usr/bin/echo e procurar outros binários do sistema alterados recentemente.",
+    "Consultar outros alertas do vitima01 no mesmo período (rootcheck, autenticação, criação de processos) para identificar sinais de comprometimento."
+  ]
+}

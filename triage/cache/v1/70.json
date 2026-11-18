@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.75,
+  "tecnica_mitre": null,
+  "justificativa": "O perfil AppArmor do utilitário 'who' foi negado ao tentar ler /etc/nsswitch.conf, um arquivo de configuração de resolução de nomes comum e esperado para esse binário. O evento indica uma política restritiva demais ou ruído operacional, sem sinais de comportamento malicioso.",
+  "proximos_passos": [
+    "Verificar se o comando 'who' foi executado por um usuário ou processo legítimo e se houve outras negações do mesmo perfil.",
+    "Revisar o perfil AppArmor 'who' e avaliar se a regra de leitura de /etc/nsswitch.conf deve ser incluída.",
+    "Escalar para investigação caso surjam negações repetidas em outros perfis ou atividade suspeita associada ao mesmo PID."
+  ]
+}

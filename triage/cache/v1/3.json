@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A regra rootcheck identificou uma assinatura genérica (que inclui padrões comuns como 'bash' e '/bin/sh') no binário /usr/bin/ls, o que pode ser falso positivo, mas também pode indicar binário trojanizado (rootkit). Sem verificação de integridade do arquivo, não há base suficiente para decidir.",
+  "proximos_passos": [
+    "Verificar a integridade do binário com 'rpm -Vf /usr/bin/ls' ou 'debsums -c coreutils' e comparar o hash SHA256 com o pacote oficial.",
+    "Checar data de modificação e origem do arquivo (stat /usr/bin/ls) e procurar outros indicadores de rootkit, como chkrootkit, rkhunter ou unhide.",
+    "Se a integridade falhar, isolar o host vitima01 e escalar para resposta a incidente; se o binário estiver íntegro, documentar como falso positivo e ajustar a regra."
+  ]
+}

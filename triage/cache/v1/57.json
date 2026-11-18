@@ -1,0 +1,11 @@
+{
+  "veredito": "incidente",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1110",
+  "justificativa": "Múltiplas falhas de autenticação PAM via SSH a partir de 192.168.122.1 sugerem tentativas repetidas de senha, possível força bruta. O hostname no log (ubuntu-vm-lab) difere do campo maquina (vitima01), o que reduz a confiança e pode indicar ambiente de laboratório ou teste autorizado.",
+  "proximos_passos": [
+    "Verificar no auth.log e journalctl os usuários-alvo, a quantidade de tentativas e se houve login bem-sucedido logo após as falhas a partir do mesmo IP.",
+    "Confirmar com a equipe se 192.168.122.1 é uma origem autorizada ou um teste de laboratório, e conferir a identidade real do host (vitima01 vs ubuntu-vm-lab).",
+    "Se não houver justificativa, bloquear temporariamente o IP de origem (fail2ban ou firewall) e avaliar restringir o acesso SSH."
+  ]
+}

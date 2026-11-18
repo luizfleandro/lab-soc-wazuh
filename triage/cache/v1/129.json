@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.7,
+  "tecnica_mitre": "T1078",
+  "justificativa": "O log descreve a abertura de sessão PAM do systemd-user para o usuário ubuntu, um evento comum de login ou de serviço de usuário, com nível 3 e sem indicadores de abuso. Há divergência entre o hostname do alerta (vitima01) e o do log (ubuntu-vm-lab) e entre os horários (13:42:28 e 14:15:42), o que sugere problema de coleta ou de correlação.",
+  "proximos_passos": [
+    "Confirmar no agente Wazuh de vitima01 se o log de origem pertence a esse host, verificando o campo hostname e a configuração de coleta.",
+    "Verificar em auth.log ou journalctl, no horário próximo a 13:42 UTC, se houve login legítimo do usuário ubuntu e qual o IP de origem.",
+    "Se a divergência persistir ou surgirem logins fora do padrão, reclassificar para investigação e checar sudo e novos processos da sessão."
+  ]
+}

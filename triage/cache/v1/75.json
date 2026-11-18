@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.85,
+  "tecnica_mitre": null,
+  "justificativa": "A regra 5502 registra apenas o encerramento normal de uma sessão PAM do sshd para o usuário ubuntu, um evento rotineiro sem indícios de comprometimento. O campo 'maquina' (vitima01) não coincide com o hostname no log (ubuntu-vm-lab), o que vale verificar, mas não muda a natureza do evento.",
+  "proximos_passos": [
+    "Confirmar se vitima01 e ubuntu-vm-lab são o mesmo host, verificando o mapeamento de agentes e o hostname real.",
+    "Verificar se o login correspondente a esta sessão (PID 4061) foi legítimo, procurando eventos de autenticação aceita para o usuário ubuntu próximos ao horário.",
+    "Acompanhar se houver aumento anormal de aberturas e encerramentos de sessão SSH de origens desconhecidas."
+  ]
+}

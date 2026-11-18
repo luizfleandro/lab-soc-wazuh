@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.7,
+  "tecnica_mitre": "T1548.003",
+  "justificativa": "O usuário ubuntu executou sudo para ler as últimas linhas de /var/ossec/logs/ossec.log, uma ação administrativa comum e sem sinais de escalada ou comando malicioso. O alerta é apenas informativo (nível 4, regra de primeiro uso), mas a primeira vez não é suspeita por si só.",
+  "proximos_passos": [
+    "Confirmar com o administrador responsável que o usuário ubuntu fez esse acesso de forma intencional.",
+    "Revisar em /var/log/auth.log a sessão de login associada (origem, horário e método de autenticação) para descartar acesso indevido.",
+    "Verificar se há outros comandos sudo recentes do mesmo usuário fora do padrão habitual."
+  ]
+}

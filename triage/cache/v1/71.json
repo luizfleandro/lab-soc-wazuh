@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.8,
+  "tecnica_mitre": null,
+  "justificativa": "O perfil AppArmor do binário 'who' teve negada a leitura de /etc/nsswitch.conf, um arquivo de configuração comum que utilitários do sistema consultam, o que indica provavelmente uma regra de perfil incompleta e não um comportamento malicioso. Não há indícios de execução anômala, mas o nome da máquina no alerta (vitima01) difere do host no log (ubuntu-vm-lab), o que deve ser verificado.",
+  "proximos_passos": [
+    "Revisar o perfil /etc/apparmor.d/usr.bin.who e verificar se falta a permissão de leitura de nsswitch.conf (ou a inclusão de abstractions/base).",
+    "Verificar se há outras negações do mesmo perfil e confirmar quem executou o 'who' e em que contexto, para descartar uso anômalo.",
+    "Confirmar a correspondência entre o agente Wazuh 'vitima01' e o host 'ubuntu-vm-lab' para garantir que o alerta vem da origem esperada."
+  ]
+}

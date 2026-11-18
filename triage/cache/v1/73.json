@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.85,
+  "tecnica_mitre": null,
+  "justificativa": "O processo 'who' com perfil AppArmor tentou ler /etc/nsswitch.conf, um arquivo de configuração de resolução de nomes que utilitários comuns leem normalmente. O padrão é ruído de política de perfil, sem indício de comportamento malicioso.",
+  "proximos_passos": [
+    "Verificar se o perfil AppArmor 'who' está atualizado e se a regra de acesso a /etc/nsswitch.conf precisa ser incluída no perfil.",
+    "Confirmar que o binário 'who' em execução é o original do pacote do sistema (ex.: dpkg -V coreutils ou procps).",
+    "Monitorar se novos eventos DENIED se repetirem com outros binários ou arquivos sensíveis."
+  ]
+}

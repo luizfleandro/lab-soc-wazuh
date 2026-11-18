@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+
 import csv
 from collections import Counter, defaultdict
 
@@ -50,3 +53,32 @@ def avaliar(nome, linhas, prever):
 
 
 avaliar("Regra burra (level >= 10)", linhas, regra_burra)
+
+CACHE = Path("cache/v1")
+
+
+def veredito_ia(linha):
+    arquivo = CACHE / f"{linha['indice']}.json"
+    if not arquivo.exists():
+        return "sem_veredito"
+    return json.loads(arquivo.read_text())["veredito"]
+
+
+def ia_escala_duvida(linha):
+    return "falso_positivo" if veredito_ia(linha) == "falso_positivo" else "incidente"
+
+
+def ia_estrita(linha):
+    return "incidente" if veredito_ia(linha) == "incidente" else "falso_positivo"
+
+
+print()
+avaliar("IA: inconclusivo é escalado", linhas, ia_escala_duvida)
+print()
+avaliar("IA: só 'incidente' conta", linhas, ia_estrita)
+
+with open("data/rotulados.csv") as f:
+    ruido = [l for l in csv.DictReader(f) if l["rotulo"] == "fora_do_gabarito"]
+print(f"\n=== Vereditos da IA nos {len(ruido)} alertas fora do gabarito ===")
+for v, qtd in Counter(veredito_ia(l) for l in ruido).most_common():
+    print(f"  {v:15} {qtd}")

@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1078",
+  "justificativa": "Login SSH bem-sucedido por senha para o usuário ubuntu a partir de 192.168.122.1, um endereço de rede interna (gateway NAT típico de laboratório), sem evidência de falhas anteriores ou atividade pós-login neste alerta. Não é possível confirmar se o acesso era esperado, e o nome do host no log (ubuntu-vm-lab) difere do campo maquina (vitima01).",
+  "proximos_passos": [
+    "Verificar se 192.168.122.1 e o usuário ubuntu são esperados e se houve acesso autorizado nesse horário.",
+    "Pesquisar no auth.log tentativas de falha anteriores do mesmo IP e os comandos executados na sessão (sudo, downloads, criação de contas ou chaves).",
+    "Confirmar a origem do alerta e o mapeamento do agente, já que o hostname do log não corresponde ao campo maquina."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.6,
+  "tecnica_mitre": "T1078",
+  "justificativa": "Abertura de sessão sudo para root por um usuário administrativo comum (ubuntu) é atividade rotineira de administração. A divergência entre o hostname do alerta (vitima01) e o do log (ubuntu-vm-lab), além do atraso de cerca de 33 minutos entre o horário do log e o do alerta, impede confirmar o contexto com segurança.",
+  "proximos_passos": [
+    "Verificar por que o hostname do agente (vitima01) difere do hostname no log (ubuntu-vm-lab) e confirmar a origem real do evento.",
+    "Confirmar com o responsável se o usuário ubuntu executou sudo nesse horário e qual comando foi executado (auditd ou histórico do sudo).",
+    "Correlacionar com logins SSH do mesmo período e com outros alertas do host para descartar uso indevido de conta válida."
+  ]
+}

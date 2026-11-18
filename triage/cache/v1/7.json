@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.85,
+  "tecnica_mitre": null,
+  "justificativa": "O log mostra apenas o encerramento de uma sessão PAM do sudo para root, evento rotineiro de uso administrativo sem indicação de comando suspeito ou autenticação falha. Há uma divergência de nome de host (vitima01 no alerta e ubuntu-vm-lab no log), que vale confirmar.",
+  "proximos_passos": [
+    "Verificar a abertura correspondente da sessão sudo (pam_unix session opened) e o comando executado, no auth.log ou no journal.",
+    "Confirmar qual host gerou o evento, já que o campo maquina e o hostname no log não coincidem.",
+    "Se o horário não corresponder a uma atividade administrativa conhecida, escalar para investigação do usuário que executou o sudo."
+  ]
+}

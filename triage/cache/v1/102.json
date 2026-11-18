@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.6,
+  "tecnica_mitre": null,
+  "justificativa": "Abertura de sessão sudo para root pelo usuário ubuntu (uid=1000) é um evento administrativo comum e não há outros indicadores de comprometimento. Porém, o hostname no log (ubuntu-vm-lab) difere do agente (vitima01) e o horário do log está cerca de 17 minutos antes do alerta, o que merece verificação.",
+  "proximos_passos": [
+    "Confirmar com o administrador responsável se o usuário ubuntu executou esse sudo no horário indicado.",
+    "Verificar a correspondência entre o hostname do agente (vitima01) e o hostname do syslog (ubuntu-vm-lab), e checar a sincronização de horário (NTP) da máquina.",
+    "Revisar os comandos executados nessa sessão sudo (ex.: auditd ou histórico) e procurar outros eventos de login ou sudo do mesmo usuário próximos ao horário."
+  ]
+}

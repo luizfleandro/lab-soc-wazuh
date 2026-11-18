@@ -1,0 +1,11 @@
+{
+  "veredito": "incidente",
+  "confianca": 0.7,
+  "tecnica_mitre": "T1110",
+  "justificativa": "Múltiplas falhas de autenticação PAM via SSH (uid=0) originadas de 192.168.122.1, com nível 10 e padrão compatível com força bruta. O nome do host no log (ubuntu-vm-lab) difere do campo maquina (vitima01), o que pode indicar ambiente de laboratório ou erro de coleta.",
+  "proximos_passos": [
+    "Verificar em /var/log/auth.log e com 'lastb' se houve login bem-sucedido a partir de 192.168.122.1 após as falhas.",
+    "Confirmar com o time responsável se 192.168.122.1 é um host autorizado (por exemplo, teste de pentest ou gateway do laboratório) e validar a origem do alerta quanto ao nome do host.",
+    "Avaliar bloqueio temporário do IP de origem (fail2ban ou firewall) e revisar a exposição do SSH na máquina."
+  ]
+}

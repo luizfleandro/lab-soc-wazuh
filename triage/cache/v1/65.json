@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há uma única falha de autenticação PAM via SSH vinda de 192.168.122.1, o que sozinho é comum e não indica força bruta. O nome do host no log (ubuntu-vm-lab) não corresponde ao campo maquina (vitima01), o que impede confirmar a origem do evento.",
+  "proximos_passos": [
+    "Pesquisar no SIEM tentativas de login falhas e bem-sucedidas de 192.168.122.1 nos últimos minutos e horas, buscando padrão de força bruta ou login seguido de sucesso.",
+    "Verificar a identidade do host: confirmar se o agente em vitima01 está enviando logs de outro sistema (ubuntu-vm-lab) e corrigir o mapeamento.",
+    "Confirmar com o responsável se 192.168.122.1 é um endereço esperado para acessos administrativos e revisar o usuário alvo da tentativa."
+  ]
+}

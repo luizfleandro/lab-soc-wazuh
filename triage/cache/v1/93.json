@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.85,
+  "tecnica_mitre": null,
+  "justificativa": "O evento é apenas o fechamento de uma sessão sudo pelo PAM (regra 5502, nível 3), que é ruído operacional normal e não indica execução de comandos privilegiados por si só. O nome de host no log (ubuntu-vm-lab) difere do campo maquina (vitima01), o que merece verificação de origem.",
+  "proximos_passos": [
+    "Confirmar se o agente vitima01 corresponde ao host ubuntu-vm-lab que gerou o log.",
+    "Correlacionar com o evento de abertura da sessão sudo (pam_unix session opened) e com o comando executado, verificando em /var/log/auth.log ou journalctl.",
+    "Se houver outros alertas de sudo para root fora de janelas de manutenção ou de usuários não autorizados, reabrir a triagem como incidente."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "O rootcheck reportou uma versão trojanizada de /bin/chmod com base em uma assinatura genérica, que costuma gerar falsos positivos, mas alterar um binário do sistema é um indicador sério de rootkit. Sem verificar a integridade do arquivo, não há base para descartar nem confirmar o comprometimento.",
+  "proximos_passos": [
+    "Verificar a integridade de /bin/chmod com o gerenciador de pacotes (rpm -V chmod ou debsums -c coreutils) e comparar o hash com a versão oficial.",
+    "Checar se houve atualização ou manutenção recente no host e procurar outros alertas de rootcheck ou alterações em binários do sistema (/bin, /sbin, /usr/bin).",
+    "Se a integridade falhar, escalar para o time de resposta a incidentes e isolar o host vitima01 para investigação forense."
+  ]
+}

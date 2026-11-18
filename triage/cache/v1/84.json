@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.8,
+  "tecnica_mitre": "T1548.003",
+  "justificativa": "O usuário 'ubuntu' executou via sudo, no console local (tty1), um comando somente leitura (tail do auth.log), o que é uma atividade administrativa comum e sem indicadores de escalada maliciosa. O hostname do campo 'maquina' (vitima01) difere do hostname no log (ubuntu-vm-lab), o que deve ser confirmado antes de encerrar.",
+  "proximos_passos": [
+    "Confirmar se o agente Wazuh 'vitima01' corresponde ao host ubuntu-vm-lab, verificando o ID do agente e a configuração de hostname.",
+    "Confirmar com o responsável pela conta 'ubuntu' se a sessão no tty1 era esperada.",
+    "Monitorar novas execuções de sudo para root fora de horário ou seguidas de comandos de alteração de configuração ou de persistência."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há uma única tentativa de senha para o usuário inexistente 'testing' vinda de 192.168.122.1, que parece ser o gateway padrão de uma rede libvirt, o que sugere ambiente de laboratório. O nome do host no alerta (vitima01) não confere com o do log (ubuntu-vm-lab), e não há dados suficientes sobre volume de tentativas ou logins bem-sucedidos.",
+  "proximos_passos": [
+    "Verificar no auth.log se há mais tentativas de SSH ou logins bem-sucedidos a partir de 192.168.122.1 nas horas seguintes.",
+    "Confirmar se 'vitima01' e 'ubuntu-vm-lab' são o mesmo ativo e se 192.168.122.1 é um host autorizado para testes.",
+    "Se o IP não for conhecido ou houver volume crescente de tentativas, escalar como incidente de possível força bruta."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A assinatura genérica do rootcheck usa padrões comuns como 'bash' e '/bin/sh', que aparecem em muitos binários legítimos, o que favorece falso positivo. Porém, um /bin/date alterado é um indicador sério de rootkit e só pode ser descartado com verificação de integridade.",
+  "proximos_passos": [
+    "Verificar a integridade do /bin/date com o gerenciador de pacotes (rpm -Vf /bin/date ou debsums -c coreutils) e comparar o hash SHA256 com o pacote original.",
+    "Checar a data de modificação, o dono e as permissões do arquivo, e procurar outros binários do sistema alterados ou rootkits com rkhunter/chkrootkit.",
+    "Se a integridade falhar, isolar o host vitima01 e escalar para análise forense; se o pacote estiver íntegro, documentar como falso positivo e avaliar ajuste da regra 510 para este host."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1110.001",
+  "justificativa": "Há apenas uma falha de autenticação SSH vinda de 192.168.122.1, o que pode ser erro de digitação. O nome do host no log (ubuntu-vm-lab) não corresponde ao campo maquina (vitima01), o que impede confirmar a origem do evento.",
+  "proximos_passos": [
+    "Verificar se há várias falhas de login do mesmo rhost 192.168.122.1 nos minutos seguintes, ou um login bem-sucedido após elas.",
+    "Confirmar a identidade do host monitorado e se o log corresponde mesmo a vitima01.",
+    "Identificar o usuário-alvo e confirmar com ele ou com o administrador se a tentativa foi legítima."
+  ]
+}

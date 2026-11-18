@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1014",
+  "justificativa": "A assinatura genérica do rootcheck, que casa com strings comuns como '/bin/sh', gera muitos falsos positivos em binários do coreutils, mas um possível trojan em /usr/bin/chgrp também indica rootkit. Sem verificar a integridade do binário, não há dados suficientes para decidir.",
+  "proximos_passos": [
+    "Comparar o hash de /usr/bin/chgrp com o do pacote original (rpm -Vf /usr/bin/chgrp ou debsums -c coreutils) e verificar data de modificação e permissões.",
+    "Checar outros binários do sistema e alertas de rootcheck semelhantes na máquina vitima01 para avaliar se há comprometimento amplo.",
+    "Se a divergência for confirmada, isolar o host e escalar para resposta a incidente; caso contrário, registrar como falso positivo e ajustar a regra."
+  ]
+}

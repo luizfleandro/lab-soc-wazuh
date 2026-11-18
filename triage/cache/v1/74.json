@@ -1,0 +1,11 @@
+{
+  "veredito": "falso_positivo",
+  "confianca": 0.7,
+  "tecnica_mitre": null,
+  "justificativa": "O AppArmor bloqueou o perfil 'who' ao tentar ler /etc/passwd, o que aponta para uma política de confinamento restritiva demais e não para uma ação maliciosa, já que o bloqueio impediu o acesso. Ainda assim, o alerta não mostra quem executou o comando nem o contexto da sessão.",
+  "proximos_passos": [
+    "Verificar se o perfil /etc/apparmor.d/ do 'who' está em modo enforce e se há outras negações recentes para o mesmo perfil.",
+    "Confirmar, pelo log de auditoria, qual usuário e sessão executaram o comando 'who' no horário do alerta.",
+    "Se o comportamento for legítimo, ajustar o perfil ou criar uma exceção controlada e documentar a mudança."
+  ]
+}

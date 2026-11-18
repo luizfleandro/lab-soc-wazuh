@@ -1,0 +1,11 @@
+{
+  "veredito": "inconclusivo",
+  "confianca": 0.5,
+  "tecnica_mitre": "T1554",
+  "justificativa": "A regra 510 do rootcheck usa uma assinatura genérica com padrões comuns como '/bin/sh' e 'bash', que aparecem em muitos binários legítimos, o que favorece falso positivo. Sem verificação de integridade do binário, não é possível descartar a substituição de /usr/bin/cat por uma versão trojanizada.",
+  "proximos_passos": [
+    "Verificar a integridade do pacote (dpkg -V coreutils ou rpm -Vf /usr/bin/cat) e comparar o hash SHA256 com a versão oficial do pacote.",
+    "Checar data de modificação, dono e permissões de /usr/bin/cat e buscar outros binários do sistema alterados recentemente (find /usr/bin /usr/sbin -newer referência).",
+    "Revisar logins, processos e conexões de rede da vitima01 no período próximo a 2026-11-16 13:08 UTC e escalar para o nível 2 se a integridade estiver comprometida."
+  ]
+}
