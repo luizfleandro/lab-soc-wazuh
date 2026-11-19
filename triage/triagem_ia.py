@@ -52,7 +52,6 @@ def chamar_ia(client, alerta):
         system=SISTEMA,
         messages=[{"role": "user", "content": f"<alerta>\n{dados}\n</alerta>"}],
     )
-    print("diagnóstico: blocos =", [b.type for b in resposta.content], "| parou por:", resposta.stop_reason)
     if resposta.stop_reason == "max_tokens":
         raise RuntimeError(f"Resposta cortada pelo limite de tokens ({resposta.usage.output_tokens} usados)")
     texto = "".join(b.text for b in resposta.content if b.type == "text").strip()
