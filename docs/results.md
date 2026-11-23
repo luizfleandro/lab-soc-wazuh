@@ -80,7 +80,7 @@ C03, C04 and C05 are **detection-layer false negatives**. L01, L02 and the sudo 
 
 The same evaluation function is used for every strategy, so the comparison is fair. Positive class = `incidente`. 37 alerts are in scope (30 malicious, 7 legitimate).
 
-| Strategy | VP | FN | FP | VN | Precision | Recall | Scenarios caught (of 3 visible) |
+| Strategy | TP | FN | FP | TN | Precision | Recall | Scenarios caught (of 3 visible) |
 |---|---|---|---|---|---|---|---|
 | Naive baseline (`level >= 10`) | 5 | 25 | 0 | 7 | 100% | 16.7% | 1 (V00) |
 | AI, strict (only `incidente` counts) | 10 | 20 | 0 | 7 | 100% | 33.3% | 2 (V00, C01) |
